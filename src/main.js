@@ -2,9 +2,11 @@ import kaboom from "kaboom";
 
 kaboom({
 
-    background: [0, 0, 0, 1],
+    scale:2,
 })
 
+setBackground(Color.fromHex("#24323F"))
+////////////////////////////
 
 // ########################### SPRITE ################################
 //
@@ -36,7 +38,6 @@ loadSprite("astro", "Q0FRlty.png", {
 
 
 //image de fond :
-loadSprite('bg', 'WtSop5r.png')
 
 // NATAN
 
@@ -75,7 +76,19 @@ loadSprite('map', 'd87auk2.png',{sliceX:20, sliceY:20,})
 
 scene("game",()=>{
 
+
+
+    onGamepadButtonPress("south", () => {
+        player.jump()
+    })
+
+    onGamepadStick("left", (v) => {
+        player.move(v.x * 250, 0)
+    })
+
+
     // ############## FULL SCREEN #############
+
 
     onKeyPress("f", (c) => {
         setFullscreen(!isFullscreen())
@@ -84,44 +97,65 @@ scene("game",()=>{
     // ##########################################
 
 
-    const imgLevelUn = add([
-        sprite('bg'),
-        scale(width() / 1920, height() /1080),
-    ])
     const level1 = [
         addLevel(
             [
 
                 ////////////////FOND BLEU ///////////////////////
 
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                '                                                     ',
+                '                    de        de                     ',
+                '  nnnnnnnn            nnnnnnnn            nnnnnnnnn  ',
+                '          n       nnnn        nnnn       n           ',
+                '                                                     ',
+                '                nn                nn                 ',
+                '                                                     ',
+                '                                    nnnnn            ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                     bbbbbbbb                        ',
+                '                    bddddddddbb                      ',
+                '                   bdddddddddddd                     ',
+                '                   dddddddddddd                      ',
+                '                     ddddddddd                       ',
+                '                      abdddab                        ',
+                '                      dedddde                        ',
+                '                       ddddd                         ',
+                '                       ddddd                         ',
+                '                       ddddd                         ',
+                '  bbddbb               ddddd                 bddbbb  ',
+                '  b ddd                ddddd                  ddd b  ',
+                '  d ddd                ddddd                  ddd d  ',
+                '  d ddd                                       ddd d  ',
+                '  d ddd                                       ddd d  ',
+                '  d ddd                                       ddd d  ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                              ddd d  ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
+                '                                                     ',
 ///////////////////////////////////////////////////////////////////////|
 
             ],{
@@ -177,34 +211,59 @@ scene("game",()=>{
 
                 //////////////// PLATEFORM ///////////////////////
 
-                'o                                                    p',
-                'o                                                    p',
-                'o                                                    p',
-                'o ffffff                  ffff                      p',
-                'o                                                   p',
-                'o        fffff                                      p',
-                'o                                                   p',
-                'o                                                   p',
-                'o                                                   p',
-                'o                    fffffffffff                    p',
-                'o        ffffffff                                   p',
-                'o                                                   p',
-                'o ff                                        ffffffffp',
-                'o                                                   p',
-                'o      fff                                          p',
-                'o                fffffffff                          p',
-                'o                                                   p',
-                'o           ff                                      p',
-                'o                                                   p',
-                'o  fffff                                            p',
-                'o                                                   p',
-                'o        fffffff                                    p',
-                'o                   fffffff                         p',
-                'o                             fffff       ff        p',
-                'o                                                   p',
-                'o                                               ffffp',
-                'o                                                   p',
-                'fffffffffffffffff     fffffff      ffffffffff       p',
+                '                                                     ',
+                ' ccccccccc          deccccccccde          cccccccccc ',
+                ' c        c      ccccc        ccccc      c         c ',
+                ' c         c     c                c     c          c ',
+                ' c         c   ccc                ccc   c          c ',
+                ' c         c   c                    c   c          c ',
+                ' c         ccccc          fffff     ccccc          c ',
+                ' cc                                               cc ',
+                '  c                                               c  ',
+                '  c         fffffff                               c  ',
+                '  c                              ffff             c  ',
+                '  c                                               c  ',
+                '  cccccc             cccccccc                cccccc  ',
+                '       c            c        cc              c       ',
+                '       c           c           c         ffffc       ',
+                '       c          c       ffff  c            c       ',
+                '       c          c            c             c       ',
+                '       c          ccc         c              c       ',
+                '       c             cab   abc               c       ',
+                '       c              de   de       ff       c       ',
+                '       c              c   f c                c       ',
+                '       c              c     c                c       ',
+                ' ccccccc              c     c    fffff       ccccccc ',
+                ' c                    cf    c                      c ',
+                ' c                    c     c                      c ',
+                ' c                    c    fc             fffff    c ',
+                ' c                                                 c ',
+                ' c                                                 c ',
+                ' c                         ffffff                  c ',
+                ' ccccccccccccccfff                     ccccccccccccc ',
+                '              c                        c             ',
+                '              c             fff        c             ',
+                '              c                        c             ',
+                '              c                        c             ',
+                '              c   ffff                 c             ',
+                ' ccccccc      c                fffff   c     ccccccc ',
+                ' c     c      c                        c     c     c ',
+                ' c     c      c                        c     c     c ',
+                ' c     c      c  ffffff                c     c     c ',
+                ' c     c      c                        c     c     c ',
+                ' c     cccccccc                        ccccccc     c ',
+                ' c                                                 c ',
+                ' c                       fffff                     c ',
+                ' c                                            ffff c ',
+                ' c                                                 c ',
+                ' c              fffff             ffffff           c ',
+                ' ccccccc                                     ccccccc ',
+                '       c                                     c       ',
+                '       c                                     c       ',
+                '       c                                     c       ',
+                '       c                                     c       ',
+                '       ccccccccccccccccccccccccccccccccccccccc       ',
+                '                                                     ',
 //////////////////////////////////////////////////////////////////////|
 
             ],{
@@ -237,34 +296,59 @@ scene("game",()=>{
 
                 ///////////////  DECORATION BLEU  ///////////////////////
 
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                       fffffffffff                 ',
-                '         ffffffff                                  ',
-                '                                                   ',
-                '  ff                                     ffffffffff',
-                '                     hi                            ',
-                '       fff           pq                            ',
-                '                                                   ',
-                '                                                   ',
-                '            ff                                     ',
-                '                                                   ',
-                '   fffff                                           ',
-                '                                                   ',
-                '   o     fffffff                                   ',
-                '   o oo               fffffff                      ',
-                '                                fffff    ff        ',
-                '   defg                                            ',
-                '   klmn                                       fffff',
-                '   stuv                                             ',
-                '                          fffffff      fffffff      ',
+                'crrrrrrrrrcchiccchichirrrrrrrrhichicchicccrrrrrrrrrrc',
+                'j         rjpqjrrpqrpq        pqrpqrrpqjjr          j',
+                'j          rccjhi                  hiccjr           j',
+                'j           rrjpq                  pqrrj            j',
+                'j           hij                      hij            j',
+                'j           pqr                      pqr            j',
+                'j                                                   j',
+                'rc                                                  r',
+                'hi                                                 hi',
+                'pq                                                 pq',
+                'cc                                                 cc',
+                'rr                                                 rr',
+                'hi                                                 hi',
+                'pqrrccc                                       cccrrpq',
+                'cchijjj                                       jjjhicc',
+                'jjpqrrj                                       jrrpqjj',
+                'jjcchij                                       jhiccjj',
+                'jjrrpqj                                       jpqrrjj',
+                'jjhiccj                                       jcchijj',
+                'rrpqrrj                                       jpqrrjj',
+                'hicchij                                       jrrpqrr',
+                'pqrrpqr                                       jhicchi',
+                'j                                                   c',
+                'j                                                   j',
+                'j  c   c                                     c   c  j',
+                'j  j   j                                     j   j  j',
+                'j  j   j                                     j   j  j',
+                'j  j   j                                     j   j  j',
+                'j  r   r                                     r   r  j',
+                'j                                                   j',
+                'jhicchicchiccc                          hicchijjhijjj',
+                'jpqrrpqrrpqrrj                          pqrrpqrrpqrrj',
+                'jrrrrrrrrrrrrj                          rrrrrrrrrrrrr',
+                'jjjhijjhijjhij                          jjhijjhijjhij',
+                'jrrpqrrpqrrpqj                          rrpqrrpqrrpqj',
+                'j       jhijjj                          hijjj    c  j',
+                'j       jpqjjj                          pqjjj    j  j',
+                'j       jjjhij                          jjhij    j  j',
+                'j       jjjpqj                          jjpqj    j  j',
+                'j       rrrrrr                          rrrrr    j  j',
+                'j                                                j  j',
+                'j                                            c   j  j',
+                'j                                            j   j  j',
+                'j                                            j   j  j',
+                'j                                            j   j  j',
+                'j                                            r   r  j',
+                'jcccccc                                             j',
+                'jhicchi                                       hicchij',
+                'jpqrrpq                                       pqrrpqj',
+                'jcchicc                                       rrpqrrj',
+                'jrrpqrr                                       rrpqrrj',
+                'jhirrrr                                       rrrrhij',
+                'rpqrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrpqr',
 /////////////////////////////////////////////////////////////////////|
 
             ],{
@@ -302,6 +386,11 @@ scene("game",()=>{
                 ///////////////  ACCESSOIRE BLEU  ///////////////////////
 
                 '                                                   ',
+                '                           *                       ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
                 '                                                   ',
                 '                                                   ',
                 '                                                   ',
@@ -330,6 +419,26 @@ scene("game",()=>{
                 '                                                   ',
                 '                                                   ',
                 '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '                                                   ',
+                '      *                                            ',
+                '                                                   ',
+                '                                                   ',
 /////////////////////////////////////////////////////////////////////|
 
             ],{
@@ -347,7 +456,7 @@ scene("game",()=>{
                     "g": () => [sprite("powerlight", {frame:19}),scale(4.5)],
                     "h": () => [sprite("shipbits", {frame:33}),scale(4.5)],
                     "i": () => [sprite("pit", {frame:34}),scale(4.5)],
-                    "j": () => [sprite("pod", {frame:35}),scale(4.5)],
+                    "*": () => [sprite("pod", {frame:3}),scale(2.5)],
                     "k": () => [sprite("messagebox", {frame:36}),scale(4.5)],
                     "l": () => [sprite("rocks", {frame:37}),scale(4.5)],
                     "m": () => [sprite("beam", {frame:38}),scale(4.5)],
@@ -396,6 +505,33 @@ scene("game",()=>{
 //                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
 //                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
 //                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    //
 // ///////////////////////////////////////////////////////////////////////|
 //
 //             ],{
@@ -752,7 +888,7 @@ scene("game",()=>{
     const ENEMY_SPEED = 60
     const BULLET_SPEED = 200
     let PLAYER_HEALTH = 100
-    let gunDestroyed = false;
+    let gunDestroyed = false
 
     setGravity(640)
 
@@ -760,10 +896,10 @@ scene("game",()=>{
         sprite('astro'),
         scale(5),
         anchor("center"),
-        pos(50,700),
+        pos(100,1650),
         area(),
         body(),
-        setGravity(400),
+        setGravity(1800),
         health(PLAYER_HEALTH),
         z(49),
         "player"
@@ -791,33 +927,126 @@ scene("game",()=>{
         }
     })
 
+    function Dash(dashX,dashY){
+        const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.2,(p) => player.pos = p,easings.easeOutSine)
+        player.onCollide("block",()=>{
+            console.log("player collide with block")
+            t.cancel()
+        })
+    }
+
+    let dirX = 0
+    let dirY = 0
+
+    onUpdate(()=>{
+        onKeyDown("z",()=>{
+            gun.angle = -90
+            dirX = 0
+            dirY = 100
+        })
+        onKeyDown("s",()=>{
+            gun.angle = 90
+            dirX = 0
+            dirY = -100
+        })
+
+        onKeyDown("q",()=>{
+            gun.angle = 180
+            dirX = 100
+            dirY = 0
+        })
+
+        onKeyDown("d",()=>{
+            gun.angle = 0
+            dirX = -100
+            dirY = 0
+        })
+
+        if(isKeyDown("z") && isKeyDown("d"))
+        {
+            console.log("up right")
+            gun.angle = -45
+            dirX = -100
+            dirY = 100
+        }
+        if(isKeyDown("z") && isKeyDown("q"))
+        {
+            console.log("up left")
+            gun.angle = -135
+            dirX = 100
+            dirY = 100
+        }
+        if(isKeyDown("s") && isKeyDown("q"))
+        {
+            console.log("down left")
+            gun.angle = 135
+            dirX = 100
+            dirY = -100
+        }
+        if(isKeyDown("s") && isKeyDown("d"))
+        {
+            console.log("down right")
+            gun.angle = 45
+            dirX = -100
+            dirY = 100
+        }
+    })
+
+    onKeyDown("d",()=>{
+        player.move(SPEED, 0)
+        onUpdate(()=>{
+            if(isDashing){
+                player.move(0,0)
+                wait(3,()=>{
+                    isDashing = false
+                    console.log("waiting 3s ")
+                })
+
+            }
+        })
+    })
+
+    onKeyDown("q",()=>{
+        player.move(-SPEED, 0)
+    })
+
+    let canJump  = true
     onKeyPress("space", () => {
         if (player.isGrounded()) {
+            canJump = true
+            console.log(canJump)
+            console.log("player grounded")
             player.jump(JUMP_FORCE)
             player.play("jump")
+        } else {
+            console.log("player on air")
+            console.log(canJump)
+            if(canJump){
+                console.log("can jump")
+                Dash(0,-100)
+                canJump = false
+            } else {
+                console.log("cannon jump")
+            }
         }
     })
 
 
-    onKeyDown("left", () => {
-        player.move(-SPEED, 0)
-        player.flipX = true
-        // .play() will reset to the first frame of the anim, so we want to make sure it only runs when the current animation is not "run"
-        if (player.isGrounded() && player.curAnim() !== "run") {
-            player.play("run")
-        }
-    })
 
-    onKeyDown("right", () => {
-        player.move(SPEED, 0)
-        player.flipX = false
-        if (player.isGrounded() && player.curAnim() !== "run") {
-            player.play("run")
-        }
-    })
+
+
+
+
 
     // #########################################################
 
+    //######################### CAMERA ##########################
+
+    onUpdate(()=>{
+        camPos(player.pos.x,player.pos.y)
+    })
+
+    //###########################################################
 
     // ###################### GUN ##############################
 
@@ -826,29 +1055,37 @@ scene("game",()=>{
         sprite("gun"),
         scale(0.04),
         pos(player.pos.x,player.pos.y),
+        // pos(500,500),
         anchor(vec2(0,0)),
         area(),
         rotate(0),
         color(204, 230, 244),
         z(50),
         // z(49),
-        "gun"
+        "gun",
     ])
 
     onUpdate(() => {
-        const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
+        // const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
         // 	console.log("muzzle: ", muzzlePos)
         gun.pos = player.pos
         // 	console.log(gun.pos)
-        gun.angle = mousePos().angle(gun.pos)
+        // gun.angle = mousePos().angle(gun.pos)
         // 	console.log(gun.angle)
     })
 
-    onClick((position)=> {
+    let isDashing = false
+
+    onKeyPress("shift",(position)=> {
 
         const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
         spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
         //debug.log(mousePos().angle())
+        if(!player.isGrounded()){
+            isDashing = true
+            Dash(dirX,dirY)
+            console.log("dash dirX: ",dirX,", dirY: ",dirY)
+        }
     })
 
     function spawnBullet(bulletposX, bulletPosY, direction) {
