@@ -6,6 +6,7 @@ kaboom({
 })
 
 setBackground(Color.fromHex("#24323F"))
+setGravity(600)
 ////////////////////////////
 
 // ########################### SPRITE ################################
@@ -76,17 +77,6 @@ loadSprite('map', 'd87auk2.png',{sliceX:20, sliceY:20,})
 
 scene("game",()=>{
 
-
-
-    onGamepadButtonPress("south", () => {
-        player.jump()
-    })
-
-    onGamepadStick("left", (v) => {
-        player.move(v.x * 250, 0)
-    })
-
-
     // ############## FULL SCREEN #############
 
 
@@ -99,6 +89,7 @@ scene("game",()=>{
 
     const level1 = [
         addLevel(
+
             [
 
                 ////////////////FOND BLEU ///////////////////////
@@ -274,10 +265,10 @@ scene("game",()=>{
 
                     "a": () => [sprite("map", {frame:33}),scale(4.5), area(),body({isStatic:true}) ],
                     "b": () => [sprite("map", {frame:34}),scale(4.5), area(),body({isStatic:true}) ],
-                    "c": () => [sprite("map", {frame:52}),scale(4.5), area(),body({isStatic:true}) ],
+                    "c": () => [sprite("map", {frame:52}),scale(4.5), area(),body({isStatic:true}),"block" ],
                     "d": () => [sprite("map", {frame:53}),scale(4.5), area(),body({isStatic:true}) ],
                     "e": () => [sprite("map", {frame:54}),scale(4.5), area(),body({isStatic:true}) ],
-                    "f": () => [sprite("map", {frame:180}),scale(4.5), area(),body({isStatic:true}) ],
+                    "f": () => [sprite("map", {frame:180}),scale(4.5), area(),body({isStatic:true}),"block" ],
                     "g": () => [sprite("map", {frame:181}),scale(4.5), area(),body({isStatic:true}) ],
                     "h": () => [sprite("map", {frame:182}),scale(4.5), area(),body({isStatic:true}) ],
                     "i": () => [sprite("map", {frame:183}),scale(4.5), area(),body({isStatic:true}) ],
@@ -456,7 +447,7 @@ scene("game",()=>{
                     "g": () => [sprite("powerlight", {frame:19}),scale(4.5)],
                     "h": () => [sprite("shipbits", {frame:33}),scale(4.5)],
                     "i": () => [sprite("pit", {frame:34}),scale(4.5)],
-                    "*": () => [sprite("pod", {frame:3}),scale(2.5)],
+                    "*": () => [sprite("pod", {frame:3}),scale(2.5), anchor("bot"), patrol(), offscreen({ hide: true }),  area(), "dangerous"],
                     "k": () => [sprite("messagebox", {frame:36}),scale(4.5)],
                     "l": () => [sprite("rocks", {frame:37}),scale(4.5)],
                     "m": () => [sprite("beam", {frame:38}),scale(4.5)],
@@ -477,61 +468,37 @@ scene("game",()=>{
 //     const level2 = [
 //         addLevel(
 //             [
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-//                 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-    //
+//                 '                                                                                                                 ',
+//                 '             nnnnnnnnnnnnnnn                                                                                     ',
+//                 '             ddddddddddddddd                                                                                     ',
+//                 '             ddddddddddddddd                   nnnnnnnnnnn                                                       ',
+//                 '     nnnnnnnnddddddddddddddd                  ndddddddddddn                                                      ',
+//                 '             ddddddddddddddd                 ndddddddddddddn                                                     ',
+//                 '                     ddddddd               ndddddddddddddddddn                                                   ',
+//                 '                      dddddd              ndddddddddddddddddddn                                                  ',
+//                 '                       ddddd             ndddddddddddddddddddddn                                                 ',
+//                 '                                         ddddddddddddddddddddddddddd                                             ',
+//                 '                                         ddddddddddddddddddddddddddd                                             ',
+//                 '                                         ddddddddddddddddddddddddddd                                             ',
+//                 '                                           ddddddddddddddddddd                                                   ',
+//                 '                                           ddddddddddddddddddd                                                   ',
+//                 '                                             ddddddddddddddd               dddddddddddd                          ',
+//                 '                                              ddddddddddddd               dddddddddddddd                         ',
+//                 '                                                                         ddddddddddddddddddddd                   ',
+//                 '                                                                        dddddddddddddddddddddd                   ',
+//                 '                                                                        ddddddddddddddddddd                      ',
+//                 '                                                                        dddddddddddddddddd                       ',
+//                 '                                                                        ddddddddddddddddd                        ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//
 // ///////////////////////////////////////////////////////////////////////|
 //
 //             ],{
@@ -570,35 +537,38 @@ scene("game",()=>{
 //             }),
 //         addLevel(
 //             [
-//                 'o                                                   p',
-//                 'o                                                   p',
-//                 'o                                                   p',
-//                 'o ffffff                  ffff                      p',
-//                 'o                                                   p',
-//                 'o        fffff                                      p',
-//                 'o                                                   p',
-//                 'o                                                   p',
-//                 'o                                                   p',
-//                 'o                    fffffffffff                    p',
-//                 'o        ffffffff                                   p',
-//                 'o                                                   p',
-//                 'o ff                                        ffffffffp',
-//                 'o                                                   p',
-//                 'o      fff                                          p',
-//                 'o                fffffffff                          p',
-//                 'o                                                   p',
-//                 'o           ff                                      p',
-//                 'o                                                   p',
-//                 'o  fffff                                            p',
-//                 'o                                                   p',
-//                 'o        fffffff                                    p',
-//                 'o                   fffffff                         p',
-//                 'o                             fffff       ff        p',
-//                 'o                                                   p',
-//                 'o                                               ffffp',
-//                 'o                                                   p',
-//                 'fffffffffffffffff     fffffff      ffffffffff       p',
+//                 'kccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccck',
+//                 'k   k   k   k               k       k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k',
+//                 'k   k   k   k               k       k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k',
+//                 'kkk kkk kkk k               k       k   k   k               k   k   kabababababababababababab   k   k   k   k   k',
+//                 'k   k                       k       k   k   k               k   k   kdedededededededededededeabababababab   k   k',
+//                 'k   k                       kcccc       k   k               k   k  ab                        dededededede   k   k',
+//                 'k kkk           iiiii       k   c       k                       k  de                                    abab   k',
+//                 'k cc                 i      k   c       k                       kab                                      dedecc k',
+//                 'kc  c                 i     k   ccccc   k                       kde                                         c  ck',
+//                 'k                     iiiiiik       c   k                                                                       k',
+//                 'k                                   cccck                                                                       k',
+//                 'k                                       k                                                                       k',
+//                 'kiiii     ccc                           kjj                   jjj                                   ccc   iiiiiik',
+//                 'k    i    ckc                           abk                   kab          cccccccccccc             k c         k',
+//                 'k     i   c  c                          dekjj               jjkde         c            c           c  c         k',
+//                 'k     i   c   c                                                          c              ccc       c   c         k',
+//                 'k    i    ckk kc                                                        c                        ck kkc         k',
+//                 'kiiii     c   c                                                                                   c   c         k',
+//                 'k         c  c                                                                             ccc     c  c         k',
+//                 'k         ckc                              abababab   abababab                            c         k c         k',
+//                 'k         ccc                          iiiidededede   dedededeiiii                       c          ccc         k',
+//                 'k                                      abab k   k       k   k abab      ccccccccccccccccc                       k',
+//                 'kccccc                               iidede k   k       k   k dedeii                                       ccccck',
+//                 'k   kc                               ab k   k   k       k   k   k ab                                       ck   k',
+//                 'k   kc                            iiide k   k   k       k   k   k deiii                                    ck   k',
+//                 'kkk kcccccccc                     abk   k   k   k       k   k   k   kab                             cccccccck   k',
+//                 'k   kkk kkk k                   iidek   k   k   k       k   k   k   kdeii                           k   k   k   k',
+//                 'k   k   k   k                  iab  k   k   k   k       k   k   k   k  abi                          k   k   k   k',
+//                 'k kkk   k   kcccccccccccccccciiide  k   k   k   k       k   k   k   k  deiii         ccccccccccccccck   k   k   k',
+//                 'kccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccck',
 // //////////////////////////////////////////////////////////////////////|
+//
 //
 //             ],{
 //                 tileWidth: 36,
@@ -607,54 +577,56 @@ scene("game",()=>{
 //
 //                     //////////////// PLATEFORM ORANGE ///////////////////////
 //
-//                     "a": () => [sprite("map", {frame:93}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "b": () => [sprite("map", {frame:94}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "c": () => [sprite("map", {frame:112}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "d": () => [sprite("map", {frame:113}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "e": () => [sprite("map", {frame:114}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "f": () => [sprite("map", {frame:200}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "g": () => [sprite("map", {frame:201}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "h": () => [sprite("map", {frame:202}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "i": () => [sprite("map", {frame:203}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "j": () => [sprite("map", {frame:204}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "k": () => [sprite("map", {frame:205}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "l": () => [sprite("map", {frame:206}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "m": () => [sprite("map", {frame:207}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "n": () => [sprite("map", {frame:208}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "o": () => [sprite("map", {frame:209}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "p": () => [sprite("map", {frame:210}),scale(4.5), area(),body({isStatic:true}) ],
+//                     "a": () => [sprite("map", {frame:93}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "b": () => [sprite("map", {frame:94}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "c": () => [sprite("map", {frame:112}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "d": () => [sprite("map", {frame:113}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "e": () => [sprite("map", {frame:114}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "f": () => [sprite("map", {frame:200}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "g": () => [sprite("map", {frame:201}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "h": () => [sprite("map", {frame:202}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "i": () => [sprite("map", {frame:203}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "j": () => [sprite("map", {frame:204}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "k": () => [sprite("map", {frame:205}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "l": () => [sprite("map", {frame:206}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "m": () => [sprite("map", {frame:207}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "n": () => [sprite("map", {frame:208}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "o": () => [sprite("map", {frame:209}),scale(4.5), area(),body({isStatic:true}), "block" ],
+//                     "p": () => [sprite("map", {frame:210}),scale(4.5), area(),body({isStatic:true}), "block" ],
 //                 },
 //             }),
 //         addLevel(
 //             [
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                     hi                            ',
-//                 '                     pq                            ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '                                                   ',
-//                 '   o                                               ',
-//                 '   o oo                                            ',
-//                 '                                                   ',
-//                 '   defg                                            ',
-//                 '   klmn                                            ',
-//                 '   stuv                                             ',
-//                 '                                                    ',
+//                 '                                                                                                                 ',
+//                 ' hic hic hic                 hiooccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc     ',
+//                 ' pqj pqj pqj                 pqhijjj jjj jjj jjr rrr rrr rjj jjj jjj rrr rrr rrr rrr rrr rrr jjj jjj jjj jjj     ',
+//                 '   r   r   r                 hipqjjj jjj jjj jr           rj jjj jjj                         rrr rrr rrr jjj     ',
+//                 ' chi                         pqoorrr jjj jjj r             r jjj jjr                                     jjj     ',
+//                 ' jpq   c                         hioojjj jjr                 rjj jj                                      rrr     ',
+//                 ' r     j                         pqhijjj jr                   rj rr                                              ',
+//                 '       j                         hipqjjj r                     r                                                 ',
+//                 '       j                             jjj                                                                 c       ',
+//                 ' c  c  j                             rrr                                                                 j  c  c ',
+//                 ' j  j  j                                                                                                 j  j  j ',
+//                 ' r  r  j              c                                                                         c        j  r  r ',
+//                 ' iiii  j        c     j                  jj                   jjj                               j        j       ',
+//                 ' hiooi j        j     j                                                                         j    o   j  c  c ',
+//                 ' pqhioij   hi   j     j                    jj               jj                                  j   hi   j  j  j ',
+//                 ' hipqoij   pq   j     j                                                                         j   pq   j  j  j ',
+//                 ' pqooi j     j  j     j                                                                         j  j     j  j  j ',
+//                 ' iiii  j   hir  j     j                                                                         j  rhi   j  j  j ',
+//                 ' c  c  j   pq   j     j                                                                         j   pq   j  j  j ',
+//                 ' j  j  j        j  c  j                                                                      c  j    o   j  j  j ',
+//                 ' j  j  j        j  j  j                                                                   c  j  j  j     j  j  j ',
+//                 ' r  r  j        j  j  j                                  ccc c                            j  j  j  j  c  j  r  r ',
+//                 '       j        j  j  j                                  jjj j                            j  j  j  j  j  j       ',
+//                 ' hic   j        j  j  j                c ccj             jjj j   c                        j  j  j  j  j  j   chi ',
+//                 ' pqj   r        j  j  j                j jjj             jjj jjj j                        j  j  j  j  r  r   jpq ',
+//                 '   r         c  j  j  j              ccj jjj             jjj jjj jcc                      j  j  j  j         r   ',
+//                 ' chi   c   c j  j  j  j              jjj jjj             jjj jjj jjj                      j  j  j  j c   c   jic ',
+//                 ' jpq hij hij r  r  r  r           cc jjj jjj             jjj jjj jjj cc                   r  r  r  r jhi jhi pqj ',
+//                 ' r   pqr pqr                      jj rrr rrr rrr         rrr rrr rrr jj                              rpq rpq   r ',
+//                 '                                                                                                                 ',
 // /////////////////////////////////////////////////////////////////////|
 //
 //
@@ -688,8 +660,71 @@ scene("game",()=>{
 //                     "u": () => [sprite("map", {frame:118}),scale(4.5)],
 //                     "v": () => [sprite("map", {frame:119}),scale(4.5)],
 //                 },
+//             }),
+//         addLevel(
+//             [
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//                 '                                                                                                                 ',
+//             ], {
+//                 tileWidth: 36,
+//                 tileHeight: 36,
+//                 tiles: {
+//
+//
+//                     "a": () => [sprite("battery", {frame:1}),scale(4.5)],
+//                     "b": () => [sprite("explosion", {frame:14}),scale(4.5)],
+//                     "c": () => [sprite("explosion2", {frame:15}),scale(4.5)],
+//                     "d": () => [sprite("smoke", {frame:16}),scale(4.5)],
+//                     "e": () => [sprite("timerswitch", {frame:17}),scale(4.5)],
+//                     "f": () => [sprite("button", {frame:18}),scale(4.5)],
+//                     "g": () => [sprite("powerlight", {frame:19}),scale(4.5)],
+//                     "h": () => [sprite("shipbits", {frame:33}),scale(4.5)],
+//                     "i": () => [sprite("pit", {frame:34}),scale(4.5)],
+//                     "*": () => [sprite("pod", {frame:3}),scale(2.5)],
+//                     "k": () => [sprite("messagebox", {frame:36}),scale(4.5)],
+//                     "l": () => [sprite("rocks", {frame:37}),scale(4.5)],
+//                     "m": () => [sprite("beam", {frame:38}),scale(4.5)],
+//                     "n": () => [sprite("crate", {frame:39}),scale(4.5)],
+//                     "o": () => [sprite("crate2", {frame:52}),scale(4.5)],
+//                     "p": () => [sprite("droplets", {frame:53}),scale(4.5)],
+//                     "q": () => [sprite("editorblock", {frame:54}),scale(4.5)],
+//                     "r": () => [sprite("jet", {frame:55}),scale(4.5)],
+//                     "s": () => [sprite("jet2", {frame:56}),scale(4.5)],
+//                     "t": () => [sprite("jet3", {frame:57}),scale(4.5)],
+//                     "u": () => [sprite("pod1", {frame:58}),scale(4.5)],
+//                     "v": () => [sprite("portrait", {frame:59}),scale(4.5)],
+//                 },
 //             })
 //     ]
+
 
 //     const level3 = [
 //         addLevel(
@@ -799,10 +834,10 @@ scene("game",()=>{
 //
 //                     "a": () => [sprite("map", {frame:153}),scale(4.5), area(),body({isStatic:true}) ],
 //                     "b": () => [sprite("map", {frame:154}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "c": () => [sprite("map", {frame:172}),scale(4.5), area(),body({isStatic:true}) ],
+//                     "c": () => [sprite("map", {frame:172}),scale(4.5), area(),body({isStatic:true}),"block" ],
 //                     "d": () => [sprite("map", {frame:173}),scale(4.5), area(),body({isStatic:true}) ],
 //                     "e": () => [sprite("map", {frame:174}),scale(4.5), area(),body({isStatic:true}) ],
-//                     "f": () => [sprite("map", {frame:220}),scale(4.5), area(),body({isStatic:true}) ],
+//                     "f": () => [sprite("map", {frame:220}),scale(4.5), area(),body({isStatic:true}),"block" ],
 //                     "g": () => [sprite("map", {frame:221}),scale(4.5), area(),body({isStatic:true}) ],
 //                     "h": () => [sprite("map", {frame:222}),scale(4.5), area(),body({isStatic:true}) ],
 //                     "i": () => [sprite("map", {frame:223}),scale(4.5), area(),body({isStatic:true}) ],
@@ -890,33 +925,19 @@ scene("game",()=>{
     let PLAYER_HEALTH = 100
     let gunDestroyed = false
 
-    setGravity(640)
-
     const player = add([
         sprite('astro'),
         scale(5),
         anchor("center"),
-        pos(100,1650),
+        pos(300,300),
         area(),
         body(),
-        setGravity(1800),
         health(PLAYER_HEALTH),
         z(49),
         "player"
     ])
 
-    //plateform
-
-    // add([
-    //     rect(width(), 24),
-    //     area(),
-    //     outline(1),
-    //     pos(0, height()),
-    //     body({ isStatic: true }),
-    // ])
-
-
-    //movement
+    //######################### MOUVEMENT ###########################
 
     // Switch to "idle" or "run" animation when player hits ground
     player.onGround(() => {
@@ -929,107 +950,133 @@ scene("game",()=>{
 
     function Dash(dashX,dashY){
         const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.2,(p) => player.pos = p,easings.easeOutSine)
-        player.onCollide("block",()=>{
-            console.log("player collide with block")
-            t.cancel()
+        onUpdate(()=>{
+            player.onCollide("block",()=>{
+                console.log("player collide with block")
+                t.cancel()
+            })
         })
     }
 
+    // ########################## KEYBOARD CONTROL #############################
     let dirX = 0
     let dirY = 0
+    if(!isGamepadConnected){
 
-    onUpdate(()=>{
-        onKeyDown("z",()=>{
-            gun.angle = -90
-            dirX = 0
-            dirY = 100
-        })
-        onKeyDown("s",()=>{
-            gun.angle = 90
-            dirX = 0
-            dirY = -100
-        })
 
-        onKeyDown("q",()=>{
-            gun.angle = 180
-            dirX = 100
-            dirY = 0
+        onUpdate(()=>{
+            onKeyDown("z",()=>{
+                gun.angle = -90
+                dirX = 0
+                dirY = 100
+            })
+            onKeyDown("s",()=>{
+                gun.angle = 90
+                dirX = 0
+                dirY = -100
+            })
+
+            onKeyDown("q",()=>{
+                gun.angle = 180
+                dirX = 100
+                dirY = 0
+            })
+
+            onKeyDown("d",()=>{
+                gun.angle = 0
+                dirX = -100
+                dirY = 0
+            })
+
+            if(isKeyDown("z") && isKeyDown("d"))
+            {
+                console.log("up right")
+                gun.angle = -45
+                dirX = -100
+                dirY = 100
+            }
+            if(isKeyDown("z") && isKeyDown("q"))
+            {
+                console.log("up left")
+                gun.angle = -135
+                dirX = 100
+                dirY = 100
+            }
+            if(isKeyDown("s") && isKeyDown("q"))
+            {
+                console.log("down left")
+                gun.angle = 135
+                dirX = 100
+                dirY = -100
+            }
+            if(isKeyDown("s") && isKeyDown("d"))
+            {
+                console.log("down right")
+                gun.angle = 45
+                dirX = -100
+                dirY = 100
+            }
         })
 
         onKeyDown("d",()=>{
-            gun.angle = 0
-            dirX = -100
-            dirY = 0
+            player.move(SPEED, 0)
+            onUpdate(()=>{
+                if(isDashing){
+                    player.move(0,0)
+                    wait(3,()=>{
+                        isDashing = false
+                        console.log("waiting 3s ")
+                    })
+
+                }
+            })
         })
 
-        if(isKeyDown("z") && isKeyDown("d"))
-        {
-            console.log("up right")
-            gun.angle = -45
-            dirX = -100
-            dirY = 100
-        }
-        if(isKeyDown("z") && isKeyDown("q"))
-        {
-            console.log("up left")
-            gun.angle = -135
-            dirX = 100
-            dirY = 100
-        }
-        if(isKeyDown("s") && isKeyDown("q"))
-        {
-            console.log("down left")
-            gun.angle = 135
-            dirX = 100
-            dirY = -100
-        }
-        if(isKeyDown("s") && isKeyDown("d"))
-        {
-            console.log("down right")
-            gun.angle = 45
-            dirX = -100
-            dirY = 100
-        }
-    })
-
-    onKeyDown("d",()=>{
-        player.move(SPEED, 0)
-        onUpdate(()=>{
-            if(isDashing){
-                player.move(0,0)
-                wait(3,()=>{
-                    isDashing = false
-                    console.log("waiting 3s ")
-                })
-
-            }
+        onKeyDown("q",()=>{
+            player.move(-SPEED, 0)
         })
-    })
 
-    onKeyDown("q",()=>{
-        player.move(-SPEED, 0)
-    })
-
-    let canJump  = true
-    onKeyPress("space", () => {
-        if (player.isGrounded()) {
-            canJump = true
-            console.log(canJump)
-            console.log("player grounded")
-            player.jump(JUMP_FORCE)
-            player.play("jump")
-        } else {
-            console.log("player on air")
-            console.log(canJump)
-            if(canJump){
-                console.log("can jump")
-                Dash(0,-100)
-                canJump = false
+        let canJump  = true
+        onKeyPress("space", () => {
+            if (player.isGrounded()) {
+                canJump = true
+                console.log(canJump)
+                console.log("player grounded")
+                player.jump(JUMP_FORCE)
+                player.play("jump")
             } else {
-                console.log("cannon jump")
+                console.log("player on air")
+                console.log(canJump)
+                if(canJump){
+                    console.log("can jump")
+                    Dash(0,-100)
+                    canJump = false
+                } else {
+                    console.log("cannon jump")
+                }
             }
-        }
-    })
+        })
+    }
+
+
+    // ##################################################################
+
+    // ########################## GAMEPAD CONTROL #######################
+
+    if(isGamepadConnected){
+        setGravity(2800)
+        onGamepadStick("left", (v) => {
+            player.move(v.x * 250, 0)
+        })
+
+        onGamepadButtonPress("south", () => {
+            player.jump()
+        })
+
+
+    }
+
+
 
 
 
@@ -1086,10 +1133,10 @@ scene("game",()=>{
             Dash(dirX,dirY)
             console.log("dash dirX: ",dirX,", dirY: ",dirY)
         }
+
     })
 
     function spawnBullet(bulletposX, bulletPosY, direction) {
-
 
         add([
             rect(25, 3),
@@ -1103,7 +1150,6 @@ scene("game",()=>{
             rotate(gun.angle),
             "playerBullet",
             "danger"
-
         ]);
     }
 
@@ -1111,6 +1157,34 @@ scene("game",()=>{
 
 
     // ######################## ENEMY #########################
+
+    function patrol(speed = 100, dir = 1) {
+        let changeDirectionTimeout;
+
+        function changeDirection() {
+            dir = -dir; // Change la direction
+            // Réinitialise le délai pour le prochain changement de direction
+            changeDirectionTimeout = setTimeout(changeDirection, 3000); // 3000 ms = 3 secondes
+        }
+
+        return {
+            id: "patrol",
+            require: ["pos", "area"],
+            add() {
+                // Lance le délai initial pour le premier changement de direction
+                changeDirectionTimeout = setTimeout(changeDirection, 3000); // 3000 ms = 3 secondes
+
+                this.on("collide", (obj, col) => {
+                    if (col.isLeft() || col.isRight()) {
+                        dir = -dir;
+                    }
+                });
+            },
+            update() {
+                this.move(speed * dir, 0);
+            },
+        };
+    }
 
     const enemy = add([
         sprite("ghosty"),
@@ -1222,6 +1296,24 @@ scene("game",()=>{
     // 	gunDestroyed = true
     // })
 
+    player.onCollide("dangerous", () => {
+        player.hurt(20)
+        healthBar.value -= 20
+        healthBar.text = healthBar.value + "pv"
+        console.log(healthBar.value)
+        if (healthBar.value <= 0)
+        {
+            go('lose')
+            wait(2,()=>{
+                go('scene')
+            })
+        }
+    })
+
+    onCollide("playerBullet", "dangerous", (p, d) => {
+        destroy(d)
+    })
+
     // ########################### SCORE #############################
 
     const score = add([
@@ -1266,6 +1358,7 @@ scene("game",()=>{
 
 })
 
+// ############################ SCENE LOSE ################################"
 scene('lose',()=>{
 
     add([
@@ -1276,4 +1369,77 @@ scene('lose',()=>{
     ])
 })
 
-go('game')
+// #################### SCENE MENU ###############################
+
+let isGamepadConnected = false
+scene("menu",()=>{
+    setBackground(0,0,0)
+
+    add([
+        text("Gamepad not found", {
+            width: width() - 30,
+            align: "center",
+        }),
+        pos(center()),
+        anchor("center"),
+    ])
+
+    onGamepadConnect(()=>{
+        add([
+            text("Gamepad Connected", {
+                width: width() - 180,
+                align: "center",
+            }),
+            pos(center()),
+            anchor("center"),
+        ])
+        isGamepadConnected = true
+    })
+
+    function addButton(txt, p, f) {
+
+        // add a parent background object
+        const btn = add([
+            rect(240, 80, { radius: 8 }),
+            pos(p),
+            area(),
+            scale(1),
+            anchor("center"),
+            outline(4),
+        ])
+
+        // add a child object that displays the text
+        btn.add([
+            text(txt),
+            anchor("center"),
+            color(0, 0, 0),
+        ])
+
+        // onHoverUpdate() comes from area() component
+        // it runs every frame when the object is being hovered
+        btn.onHoverUpdate(() => {
+            const t = time() * 10
+            btn.color = hsl2rgb((t / 10) % 1, 0.6, 0.7)
+            btn.scale = vec2(1.2)
+            setCursor("pointer")
+        })
+
+        // onHoverEnd() comes from area() component
+        // it runs once when the object stopped being hovered
+        btn.onHoverEnd(() => {
+            btn.scale = vec2(1)
+            btn.color = rgb()
+        })
+
+        // onClick() comes from area() component
+        // it runs once when the object is clicked
+        btn.onClick(f)
+
+        return btn
+
+    }
+
+    addButton("Start Game",vec2(200,100),()=> go("game"))
+})
+
+go("menu")
