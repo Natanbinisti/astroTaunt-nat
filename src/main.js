@@ -2,25 +2,32 @@ import kaboom from "kaboom";
 
 kaboom({
 
-    scale:2,
+    scale:1,
     font: "upheavtt",
 })
 
 setBackground(Color.fromHex("#24323F"))
 setGravity(600)
-////////////////////////////
+//////////////////////////////////MUSIC /////////////////////////
+
+
+
+loadSound('boss2', 'sounds/Arcade_Boss_2.wav')
+
+///////////////////////////////////////////////////////////////////
 
 // ########################### SPRITE ################################
 //
-loadRoot('https://i.imgur.com/')
-// loadSprite('astronaut','wunHyEq.png')
-loadSprite('block','M6rwarW.png')
-loadSprite('gun', '12IgStq.png')
-loadSprite('ghosty','KPO3fR9.png')
 
+// loadSprite('astronaut','wunHyEq.png')
+loadSprite('block','https://i.imgur.com/M6rwarW.png')
+loadSprite('gun', 'https://i.imgur.com/12IgStq.png')
+loadSprite('boss','https://i.imgur.com/bdCKcXh.png')
+loadSprite('spike', 'https://i.imgur.com/vPnz1At.png')
+loadSprite('hole', 'https://i.imgur.com/8RJSXey.png')
 
 //Player
-loadSprite("astro", "Q0FRlty.png", {
+loadSprite("astro", "https://i.imgur.com/Q0FRlty.png", {
     // The image contains 9 frames layed out horizontally, slice it into individual frames
     sliceX: 15,
     // Define animations
@@ -38,43 +45,47 @@ loadSprite("astro", "Q0FRlty.png", {
     },
 })
 
+loadSound("battery", "sounds/coin-flip-88793.mp3")
+
 
 //image de fond :
-loadSprite('bg-beginning', 'SutOjg4.png')
-loadSprite('bg-levels', 'sM0Q2AA.png')
-loadSprite('bg-death', 'fMJvDkf.png')
+loadSprite('bg-beginning', 'https://i.imgur.com/SutOjg4.png')
+loadSprite('bg-levels', 'https://i.imgur.com/sM0Q2AA.png')
+loadSprite('bg-death', 'https://i.imgur.com/fMJvDkf.png')
 // NATAN
 loadFont("upheavtt", "font/upheavtt.ttf")
-loadSprite('logo', 'MqUYiI6.png')
+loadSprite('logo', 'https://i.imgur.com/MqUYiI6.png')
 
-loadSprite('beam', 'fUwX4Jc.png')
-loadSprite('crate', 'Uz51WxL.png')
-loadSprite('crate2', 'UPq5A74.png')
-loadSprite('droplets', 'r13H16o.png')
-loadSprite('editorblock', '8cM0Be2.png')
-loadSprite('jet', 'vaegfFS.png')
-loadSprite('jet2', 'qtajq2q.png')
-loadSprite('jet3', 'jtSXoc2.png')
-loadSprite('pod1', 'ylskanF.png')
-loadSprite('portrait', 'gXUjnJr.png')
+
+loadSprite('beam', 'https://i.imgur.com/fUwX4Jc.png')
+loadSprite('crate', 'https://i.imgur.com/Uz51WxL.png')
+loadSprite('crate2', 'https://i.imgur.com/UPq5A74.png')
+loadSprite('droplets', 'https://i.imgur.com/r13H16o.png')
+loadSprite('editorblock', 'https://i.imgur.com/8cM0Be2.png')
+loadSprite('jet', 'https://i.imgur.com/vaegfFS.png')
+loadSprite('jet2', 'https://i.imgur.com/qtajq2q.png')
+loadSprite('jet3', 'https://i.imgur.com/jtSXoc2.png')
+loadSprite('pod1', 'https://i.imgur.com/ylskanF.png')
+loadSprite('portrait', 'https://i.imgur.com/gXUjnJr.png')
 
 
 
 /////////////////////////////SPRITE AVEC PLUSIEURS TILES///////////////////
 
-loadSprite('battery', 'bOX5EXQ.png',{sliceX: 4, sliceY: 1,})
-loadSprite('explosion', 'NTmk76G.png', {sliceX: 17, sliceY: 1,})
-loadSprite('explosion2', 'lOrfZSj.png',{sliceX: 17, sliceY: 1,})
-loadSprite('smoke', 'sjIQbV0.png',{sliceX: 11, sliceY: 1,})
-loadSprite('timerswitch', 'UGMGRMu.png',{sliceX: 5, sliceY: 1,})
-loadSprite('button', 'ThnSicB.png',{sliceX: 2, sliceY: 1,})
-loadSprite('powerlight', 'uq3DEGN.png',{sliceX: 2, sliceY: 1,})
-loadSprite('shipbits', 'oD1VIw6.png',{sliceX: 5, sliceY: 1,})
-loadSprite('pit', 'DFAfOnt.png', {sliceX: 2, sliceY: 3,})
-loadSprite('pod', 'fnH45mO.png', {sliceX: 4, sliceY: 1,})
-loadSprite('messagebox', 'gUvvVXW.png', {sliceX: 3, sliceY: 3,})
-loadSprite('rocks', 'QzTqlac.png', {sliceX: 8, sliceY: 3,})
-loadSprite('map', 'asb3EeB.png',{sliceX:20, sliceY:20,})
+loadSprite('battery', 'https://i.imgur.com/bOX5EXQ.png',{sliceX: 4, sliceY: 1,})
+loadSprite('explosion', 'https://i.imgur.com/NTmk76G.png', {sliceX: 17, sliceY: 1,})
+loadSprite('explosion2', 'https://i.imgur.com/lOrfZSj.png',{sliceX: 17, sliceY: 1,})
+loadSprite('smoke', 'https://i.imgur.com/sjIQbV0.png',{sliceX: 11, sliceY: 1,})
+loadSprite('timerswitch', 'https://i.imgur.com/UGMGRMu.png',{sliceX: 5, sliceY: 1,})
+loadSprite('button', 'https://i.imgur.com/ThnSicB.png',{sliceX: 2, sliceY: 1,})
+loadSprite('powerlight', 'https://i.imgur.com/uq3DEGN.png',{sliceX: 2, sliceY: 1,})
+loadSprite('shipbits', 'https://i.imgur.com/oD1VIw6.png',{sliceX: 5, sliceY: 1,})
+loadSprite('pit', 'https://i.imgur.com/DFAfOnt.png', {sliceX: 2, sliceY: 3,})
+loadSprite('pod', 'https://i.imgur.com/fnH45mO.png', {sliceX: 4, sliceY: 1,})
+loadSprite('messagebox', 'https://i.imgur.com/gUvvVXW.png', {sliceX: 3, sliceY: 3,})
+loadSprite('rocks', 'https://i.imgur.com/QzTqlac.png', {sliceX: 8, sliceY: 3,})
+loadSprite('map', 'https://i.imgur.com/asb3EeB.png',{sliceX:20, sliceY:20,})
+
 
 
 
@@ -94,12 +105,14 @@ scene('lose',()=>{
 
 //TODO #################### SCENE MENU ###############################
 
+let isGamepadConnected = false
+scene("menu",()=>{
 
-scene("menu", () => {
+
 
     add([
         sprite("bg-beginning"),
-        scale(0.500)
+        scale(1)
     ]),
 
         add([
@@ -114,10 +127,10 @@ scene("menu", () => {
             text('upheavtt'),
             area(),
             anchor("center"),
-            pos(center().x, 450),
+            pos(center().x, 600),
             outline(4),
-            text("Taper sur [ ENTRER ] pour commencer à jouer", {
-                size: 20,
+            text("Taper sur [ ENTRER ] ou appuyer sur [x] de la manette pour commencer à jouer", {
+                size: 30,
                 opacity: 0.3
             }),
         ]);
@@ -125,13 +138,50 @@ scene("menu", () => {
     onKeyRelease("enter", () => {
         go("chooseLevel");
     })
-});
+
+    // onGamepadDisconnect(()=>{
+    const textGamepadDisconnected = add([
+        text("Gamepad not found", {
+            width: width() - 30,
+            align: "center",
+            size: 25,
+        }),
+        pos(center().x,700),
+        anchor("center"),
+    ])
+    // })
+    onGamepadConnect(()=>{
+        add([
+            text("Gamepad Connected", {
+                width: width() - 180,
+                align: "center",
+            }),
+            pos(center().x,700),
+            anchor("center"),
+            color(50,205,50),
+        ])
+        isGamepadConnected = true
+        onGamepadButtonRelease("south", () => {
+            go("chooseLevel");
+        })
+    })
+
+    onUpdate(()=>{
+        if(isGamepadConnected == true) {
+            // destroy(onGamepadDisconnect)
+            destroy(textGamepadDisconnected)
+        }
+    })
+
+
+})
 
 scene("chooseLevel", () => {
 
+
     add([
         sprite("bg-levels"),
-        scale(0.500)
+        scale(1)
     ])
     function addButton(txt, p, f) {
 
@@ -170,568 +220,33 @@ scene("chooseLevel", () => {
 
     }
 
-    addButton("Level 1",vec2(450,200),()=> go("level1"))
-    addButton("Level 2",vec2(450,300),()=> go("level2"))
-    addButton("Level 3",vec2(450,400),()=> go("level3"))
+    addButton("Level 1",vec2(center().x,center().y-100),()=> go("level1"))
+    addButton("Level 2",vec2(center().x,center().y),()=> go("level2"))
+    addButton("Level 3",vec2(center().x,center().y+100),()=> go("level3"))
 
     add([
-        text("Dans le game ",  {
-
-            size: 40,
+        text("Choisissez un niveau !",  {
+            size: 60,
             outline: 4
         }),
+        anchor("center"),
+        pos(center().x,80)
     ]);
 });
 
 
-
 // ########################### SCENE GAME ################################
 
-scene("game",()=>{
-
-    // ############## FULL SCREEN #############
-
-
-    onKeyPress("f", (c) => {
-        setFullscreen(!isFullscreen())
-    })
-
-    // ##########################################
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    // ######################## PLAYER #########################
-
-    const SPEED = 250
-    let JUMP_FORCE = 400
-    const ENEMY_SPEED = 60
-    const BULLET_SPEED = 200
-    let PLAYER_HEALTH = 100
-    let gunDestroyed = false
-
-    const player = add([
-        sprite('astro'),
-        scale(5),
-        anchor("center"),
-        pos(300,300),
-        area(),
-        body(),
-        health(PLAYER_HEALTH),
-        z(49),
-        "player"
-    ])
-
-    //######################### MOUVEMENT ###########################
-
-    // Switch to "idle" or "run" animation when player hits ground
-    player.onGround(() => {
-        if (!isKeyDown("left") && !isKeyDown("right")) {
-            player.play("idle")
-        } else {
-            player.play("run")
-        }
-    })
-
-    // ########################## DASH ##############################
-
-    let isDashAvailable = true
-    player.onGround(()=>{
-        isDashAvailable = true
-    })
-    function Dash(dashX,dashY){
-        isDashAvailable = false
-        camScale(1.1,1)
-        const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.2,(p) => player.pos = p,easings.easeOutSine)
-        onUpdate(()=>{
-            player.onCollide("block",()=>{
-                // console.log("player collide with block")
-                t.cancel()
-            })
-        })
-        wait(0.5,()=>{
-            camScale(1,1)
-        })
-    }
-
-    // ########################## KEYBOARD CONTROL #############################
-    let dirX = 0
-    let dirY = 0
-    if(!isGamepadConnected){
-
-        onUpdate(()=>{
-            onKeyDown("z",()=>{
-                gun.angle = -90
-                dirX = 0
-                dirY = 100
-            })
-            onKeyDown("s",()=>{
-                gun.angle = 90
-                dirX = 0
-                dirY = -100
-            })
-
-            onKeyDown("q",()=>{
-                gun.angle = 180
-                dirX = 100
-                dirY = 0
-            })
-
-            onKeyDown("d",()=>{
-                gun.angle = 0
-                dirX = -100
-                dirY = 0
-            })
-
-            if(isKeyDown("z") && isKeyDown("d"))
-            {
-                console.log("up right")
-                gun.angle = -45
-                dirX = -100
-                dirY = 100
-            }
-            if(isKeyDown("z") && isKeyDown("q"))
-            {
-                console.log("up left")
-                gun.angle = -135
-                dirX = 100
-                dirY = 100
-            }
-            if(isKeyDown("s") && isKeyDown("q"))
-            {
-                console.log("down left")
-                gun.angle = 135
-                dirX = 100
-                dirY = -100
-            }
-            if(isKeyDown("s") && isKeyDown("d"))
-            {
-                console.log("down right")
-                gun.angle = 45
-                dirX = -100
-                dirY = 100
-            }
-        })
-
-        onKeyDown("d",()=>{
-            player.move(SPEED, 0)
-            onUpdate(()=>{
-                if(isDashing){
-                    player.move(0,0)
-                    wait(3,()=>{
-                        isDashing = false
-                        console.log("waiting 3s ")
-                    })
-
-                }
-            })
-        })
-
-        onKeyDown("q",()=>{
-            player.move(-SPEED, 0)
-        })
-
-        let canJump  = true
-        onKeyPress("space", () => {
-            if (player.isGrounded()) {
-                canJump = true
-                // console.log(canJump)
-                // console.log("player grounded")
-                player.jump(JUMP_FORCE)
-                player.play("jump")
-            } else {
-                // console.log("player on air")
-                // console.log(canJump)
-                if(canJump){
-                    // console.log("can jump")
-                    Dash(0,-100)
-                    canJump = false
-                } else {
-                    // console.log("cannon jump")
-                }
-            }
-        })
-
-        onKeyPress("shift",(position)=> {
-
-            const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-            spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
-            //debug.log(mousePos().angle())
-            if(!player.isGrounded()){
-                if(isDashAvailable){
-                    isDashing = true
-                    Dash(dirX,dirY)
-                }
-            }
-
-        })
-    }
-
-
-    // ##################################################################
-
-    // ########################## GAMEPAD CONTROL #######################
-
-    if(isGamepadConnected){
-        // setGravity(1500)
-        onGamepadStick("left", (v) => {
-            player.move(v.x * 250, 0)
-            onUpdate(()=>{
-                if (v.x > 0 && v.y === 0){
-                    gun.angle= 0
-                    dirX = -100
-                    dirY = 0
-                }
-                if (v.x === 0 && v.y > 0){
-                    gun.angle= 90
-                    dirX = 0
-                    dirY = -100
-                }
-                if (v.x < 0 && v.y === 0){
-                    gun.angle= 180
-                    dirX = 100
-                    dirY = 0
-                }
-                if (v.x === 0 && v.y < 0){
-                    gun.angle= -90
-                    dirX = 0
-                    dirY = 100
-                }
-            })
-        })
-
-        let canJump  = true
-        onGamepadButtonPress("south", () => {
-            if (player.isGrounded()) {
-                canJump = true
-                // console.log(canJump)
-                // console.log("player grounded")
-                player.jump(JUMP_FORCE)
-                player.play("jump")
-            } else {
-                // console.log("player on air")
-                // console.log(canJump)
-                if(canJump){
-                    // console.log("can jump")
-                    Dash(0,-100)
-                    canJump = false
-                } else {
-                    // console.log("cannon jump")
-                }
-            }
-        })
-
-        onUpdate(()=>{
-            onGamepadButtonPress("dpad-up",()=>{
-                console.log("controller dpad up")
-                gun.angle = -90
-                dirX = 0
-                dirY = 100
-            })
-            onGamepadButtonDown("dpad-down",()=>{
-                console.log("controller dpad down")
-                gun.angle = 90
-                dirX = 0
-                dirY = -100
-            })
-            onGamepadButtonDown("dpad-left",()=>{
-                gun.angle = 180
-                dirX = 100
-                dirY = 0
-            })
-            onGamepadButtonDown("dpad-right",()=>{
-                gun.angle = 0
-                dirX = -100
-                dirY = 0
-            })
-        })
-
-        onGamepadButtonPress("west",(position)=> {
-            console.log("west")
-
-            const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-            spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
-            //debug.log(mousePos().angle())
-            if(!player.isGrounded()){
-                if(!player.isGrounded()){
-                    if(isDashAvailable){
-                        isDashing = true
-                        Dash(dirX,dirY)
-                    }
-                }
-            }
-        })
-
-    }
-
-
-    // #########################################################
-
-    //######################### CAMERA ##########################
-
-    player.onUpdate(()=>{
-        camPos(player.pos)
-    })
-
-    //###########################################################
-
-    // ###################### GUN ##############################
-
-    const gun = add([
-        // rect(35, 8),
-        sprite("gun"),
-        scale(0.04),
-        pos(player.pos.x,player.pos.y),
-        // pos(500,500),
-        anchor(vec2(0,0)),
-        area(),
-        rotate(0),
-        color(204, 230, 244),
-        z(50),
-        // z(49),
-        "gun",
-    ])
-
-    onUpdate(() => {
-        // const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-        // 	console.log("muzzle: ", muzzlePos)
-        gun.pos = player.pos
-        // 	console.log(gun.pos)
-        // gun.angle = mousePos().angle(gun.pos)
-        // 	console.log(gun.angle)
-    })
-
-    let isDashing = false
-
-    function spawnBullet(bulletposX, bulletPosY, direction) {
-
-        add([
-            rect(25, 3),
-            pos(gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))),
-            anchor("top"),
-            color(165, 36, 34),
-            area(),
-            move(Vec2.fromAngle(gun.angle), 400),
-            z(20),
-            //layer("game"),
-            rotate(gun.angle),
-            "playerBullet",
-            "danger"
-        ]);
-    }
-
-    // ###############################################################
-
-
-    // ######################## ENEMY #########################
-
-    function patrol(speed = 100, dir = 1) {
-        let changeDirectionTimeout;
-
-        function changeDirection() {
-            dir = -dir; // Change la direction
-            // Réinitialise le délai pour le prochain changement de direction
-            changeDirectionTimeout = setTimeout(changeDirection, 3000); // 3000 ms = 3 secondes
-        }
-
-        return {
-            id: "patrol",
-            require: ["pos", "area"],
-            add() {
-                // Lance le délai initial pour le premier changement de direction
-                changeDirectionTimeout = setTimeout(changeDirection, 3000); // 3000 ms = 3 secondes
-
-                this.on("collide", (obj, col) => {
-                    if (col.isLeft() || col.isRight()) {
-                        dir = -dir;
-                    }
-                });
-            },
-            update() {
-                this.move(speed * dir, 0);
-            },
-        };
-    }
-
-    const enemy = add([
-        sprite("ghosty"),
-        scale(1.5),
-        pos(450,50),
-        area(),
-        body(),
-        anchor("center"),
-        state("move", [ "idle", "attack", "move" ]),
-    ])
-
-
-    enemy.onStateEnter("idle", async () => {
-        await wait(0.5)
-        enemy.enterState("attack")
-    })
-
-    enemy.onStateEnter("attack", async () => {
-
-        // Don't do anything if player doesn't exist anymore
-        if (player.exists() && enemy.exists()) {
-
-            const dir = player.pos.sub(enemy.pos).unit()
-
-            add([
-                pos(enemy.pos),
-                move(dir, BULLET_SPEED),
-                rect(12, 12),
-                area(),
-                offscreen({ destroy: true }),
-                anchor("center"),
-                color(BLUE),
-                "enemyBullet",
-            ])
-
-        }
-
-        await wait(2)
-        enemy.enterState("move")
-
-    })
-
-    enemy.onStateEnter("move", async () => {
-        await wait(2)
-        enemy.enterState("idle")
-    })
-
-
-    enemy.onStateUpdate("move", () => {
-        if (!player.exists()) return
-        const dir = player.pos.sub(enemy.pos).unit()
-        enemy.move(dir.scale(ENEMY_SPEED))
-    })
-
-
-
-    //#############################################################
-
-
-
-
-
-
-    // ################# Bullet ######################
-
-    // function spawnBullet(p) {
-    // 	if (gunDestroyed) {
-    // 		add([
-    // 			rect(12, 12),
-    // 			pos(p),
-    // 			anchor('center'),
-    // 			area(),
-    // 			color(300, 0, 0),
-    // 			move(0, 400),
-    // 			offscreen({ destroy: true }),
-    // 			'playerBullet',
-    // 		])
-    // 	}
-    // }
-
-    // onKeyPress('up', () => {
-    // 	spawnBullet(player.pos.add(20, 20));
-    // })
-
-    // ---------------- COLLIDE -----------------
-
-    player.onCollide("enemyBullet", (bullet) => {
-        destroy(bullet)
-        player.hurt(20)
-        healthBar.value -= 20
-        healthBar.text = healthBar.value + "pv"
-        console.log(healthBar.value)
-        if (healthBar.value <= 0)
-        {
-            go('lose')
-            wait(2,()=>{
-                go('scene')
-            })
-        }
-    })
-
-    enemy.onCollide("playerBullet", (bullet) => {
-        destroy(enemy)
-        console.log("touch enemy")
-        shake(200)
-    })
-
-    // player.onCollide('gun', (m) => {
-    // 	destroy(m)
-    // 	gunDestroyed = true
-    // })
-
-    player.onCollide("dangerous", () => {
-        player.hurt(20)
-        healthBar.value -= 20
-        healthBar.text = healthBar.value + "pv"
-        console.log(healthBar.value)
-        if (healthBar.value <= 0)
-        {
-            go('lose')
-            wait(2,()=>{
-                go('scene')
-            })
-        }
-    })
-
-    onCollide("playerBullet", "dangerous", (p, d) => {
-        destroy(d)
-        shake(10)
-    })
-
-    // ########################### SCORE #############################
-
-    const score = add([
-        text("score: 0"),
-        pos(width()-200,20),
-        {
-            value:0,
-        }
-    ])
-
-    // ####################################################################
-
-    // ############################# TIMER ###############################
-
-    // const timer = add([
-    // 	text("0"),
-    // 	pos(width()-200,60),
-    // 	{
-    // 		value:0,
-    // 	},
-    // ])
-    //
-    // loop(1,()=>{
-    // 	timer.value ++
-    // 	timer.text = timer.value
-    // })
-
-    // ###############################################################
-
-    // ########################## Health ############################
-
-    const healthBar = add([
-        text( "100 pv"),
-        pos(width()/2,20),
-        {
-            value:100,
-        }
-    ])
-
-    //################################################################
-
-
-})
 
 // ############################ SCENE LVL1 ################################"
 scene('level1',()=> {
+
+    loadSound('part1', 'sounds/Arcade_Partie_1.mp3')
+
+    play('part1',{
+        volume:0.3,
+        loop: true
+    })
 
     const level1 = [
         addLevel(
@@ -851,21 +366,21 @@ scene('level1',()=> {
                 '                                                     ',
                 ' ccccccccc          deccccccccde          cccccccccc ',
                 ' c        c      ccccc        ccccc      c         c ',
-                ' c         c     c                c     c          c ',
-                ' c         c   ccc                ccc   c          c ',
-                ' c         c   c                    c   c          c ',
-                ' c         ccccc         fffff      ccccc          c ',
+                ' c         c     c    $$          c     c $$$$$    c ',
+                ' c         c   ccc$$$$$$          ccc   c          c ',
+                ' c         c   c  $$$$$$     *      c   c          c ',
+                ' c         cccccffffffff            ccccc       $$$c ',
                 ' cc                                             ffcc ',
                 '  c                                               c  ',
                 '  c          ffff                                 c  ',
-                '  c                               fffff           c  ',
+                '  c                               fffff  *        c  ',
                 '  c                                               c  ',
                 '  cccccc             cccccccc                cccccc  ',
-                '       c            c        cc              c       ',
-                '       c           c           c         fff c       ',
-                '       c          c             c            c       ',
-                '       c          c            c             c       ',
-                '       c          ccc         c              c       ',
+                '       c            c$$  $$$ cc              c       ',
+                '       c           c  $ $ $ $$ c         fff c       ',
+                '       c          c    $ $      c            c       ',
+                '       c          c--      $$$ c             c       ',
+                '       c          ccc      $  c              c       ',
                 '       c             cab   abc     ff        c       ',
                 '       c              de  fde                c       ',
                 '       c              c     c                c       ',
@@ -874,31 +389,31 @@ scene('level1',()=> {
                 ' c                    c     c                      c ',
                 ' c                    c     c                      c ',
                 ' c                    c     c    fffff             c ',
-                ' c                        fff                 fff  c ',
-                ' c    fffff                                        c ',
-                ' c                                                 c ',
+                ' c                        fff                      c ',
+                ' c    *                                            c ',
+                ' c $$$$$$$                                    $$$$$c ',
                 ' ccccccccccccccff                    ffccccccccccccc ',
                 '              c                     f  c             ',
                 '              c                    f   c             ',
                 '              c        fffffff         c             ',
                 '              c                        c             ',
                 '              c                        c             ',
-                ' ccccccc      c                ffffffffc     ccccccc ',
-                ' c     c      c                        c     c     c ',
+                ' ccccccc      c     *          ffffffffc     ccccccc ',
+                ' c     c      c                        c     c  $$$c ',
                 ' c     c      c             ff         c     c     c ',
-                ' c     c      c                        c     c     c ',
-                ' c     c      c                        c     cf    c ',
+                ' c     c      c                        c     c$    c ',
+                ' c     c      c     $$$$               c     cf    c ',
                 ' c     cccccccc    ffffff              ccccccc     c ',
                 ' c                                                 c ',
                 ' c                                                 c ',
-                ' c                             fffff             ffc ',
+                ' c                             fffff              fc ',
                 ' c                                                 c ',
-                ' c                                                 c ',
+                ' c      $$$                                     ___c ',
                 ' cccccccfffffff       ffffff             ffffccccccc ',
                 '       c                                     c       ',
                 '       c                                     c       ',
-                '       c                         fffff       c       ',
-                '       c                                     c       ',
+                '       c     *                   fffff       c       ',
+                '       c                                  ___c       ',
                 '       ccccccccccccccccccccccccccccccccccccccc       ',
                 '                                                     ',
 //////////////////////////////////////////////////////////////////////|
@@ -909,22 +424,25 @@ scene('level1',()=> {
                 tiles: {
 
 
-                    "a": () => [sprite("map", {frame:33}),scale(1), area(),body({isStatic:true}) ],
-                    "b": () => [sprite("map", {frame:34}),scale(1), area(),body({isStatic:true}) ],
+                    "a": () => [sprite("map", {frame:33}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "b": () => [sprite("map", {frame:34}),scale(1), area(),body({isStatic:true}),"block" ],
                     "c": () => [sprite("map", {frame:52}),scale(1), area(),body({isStatic:true}),"block" ],
-                    "d": () => [sprite("map", {frame:53}),scale(1), area(),body({isStatic:true}) ],
-                    "e": () => [sprite("map", {frame:54}),scale(1), area(),body({isStatic:true}) ],
+                    "d": () => [sprite("map", {frame:53}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "e": () => [sprite("map", {frame:54}),scale(1), area(),body({isStatic:true}),"block" ],
                     "f": () => [sprite("map", {frame:180}),scale(1), area(),body({isStatic:true}),"block" ],
-                    "g": () => [sprite("map", {frame:181}),scale(1), area(),body({isStatic:true}) ],
-                    "h": () => [sprite("map", {frame:182}),scale(1), area(),body({isStatic:true}) ],
-                    "i": () => [sprite("map", {frame:183}),scale(1), area(),body({isStatic:true}) ],
-                    "j": () => [sprite("map", {frame:184}),scale(1), area(),body({isStatic:true}) ],
-                    "k": () => [sprite("map", {frame:185}),scale(1), area(),body({isStatic:true}) ],
-                    "l": () => [sprite("map", {frame:186}),scale(1), area(),body({isStatic:true}) ],
-                    "m": () => [sprite("map", {frame:187}),scale(1), area(),body({isStatic:true}) ],
-                    "n": () => [sprite("map", {frame:188}),scale(1), area(),body({isStatic:true}) ],
-                    "o": () => [sprite("map", {frame:189}),scale(1), area(),body({isStatic:true}) ],
-                    "p": () => [sprite("map", {frame:190}),scale(1), area(),body({isStatic:true}) ],
+                    "g": () => [sprite("map", {frame:181}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "h": () => [sprite("map", {frame:182}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "i": () => [sprite("map", {frame:183}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "j": () => [sprite("map", {frame:184}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "k": () => [sprite("map", {frame:185}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "l": () => [sprite("map", {frame:186}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "m": () => [sprite("map", {frame:187}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "n": () => [sprite("map", {frame:188}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "o": () => [sprite("map", {frame:189}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "p": () => [sprite("map", {frame:190}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "_": () => [sprite("spike"),scale(1),area(),  "dangerous"],
+                    "$": () => [sprite("battery", {frame:1}),scale(2.5),area(), "battery"],
+                    "*": () => [sprite("pod", {frame:3}),scale(2.5), anchor("bot"), patrol(), offscreen({ hide: true }),  area(), "dangerous"],
                 },
             }),
 
@@ -982,7 +500,7 @@ scene('level1',()=> {
                 'j                                                   j',
                 'jhicchi                                       hicchij',
                 'jpqrrpq                                       pqrrpqj',
-                'jcchicc                                       rrpqrrj',
+                'jcchicc                                       rrhirrj',
                 'jrrpqrr                                       rrpqrrj',
                 'jhirrrr                                       rrrrhij',
                 'rpqrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrpqr',
@@ -1017,96 +535,6 @@ scene('level1',()=> {
                     "u": () => [sprite("map", {frame:58}),scale(1)],
                     "v": () => [sprite("map", {frame:59}),scale(1)],
                 },
-            }),addLevel(
-            [
-
-                ///////////////  ACCESSOIRE BLEU  ///////////////////////
-
-                '                                                   ',
-                '                           *                       ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                     a                             ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                             *                     ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '                                                   ',
-                '      *                        *                   ',
-                '                                                   ',
-                '                                                   ',
-/////////////////////////////////////////////////////////////////////|
-
-            ],{
-                tileWidth: 36,
-                tileHeight: 36,
-                tiles: {
-
-
-                    "a": () => [sprite("battery", {frame:1}),scale(4.5)],
-                    "b": () => [sprite("explosion", {frame:14}),scale(4.5)],
-                    "c": () => [sprite("explosion2", {frame:15}),scale(4.5)],
-                    "d": () => [sprite("smoke", {frame:16}),scale(4.5)],
-                    "e": () => [sprite("timerswitch", {frame:17}),scale(4.5)],
-                    "f": () => [sprite("button", {frame:18}),scale(4.5)],
-                    "g": () => [sprite("powerlight", {frame:19}),scale(4.5)],
-                    "h": () => [sprite("shipbits", {frame:33}),scale(4.5)],
-                    "i": () => [sprite("pit", {frame:34}),scale(4.5)],
-                    "*": () => [sprite("pod", {frame:3}),scale(2.5), anchor("bot"), patrol(), offscreen({ hide: true }),  area(), "dangerous"],
-                    "k": () => [sprite("messagebox", {frame:36}),scale(4.5)],
-                    "l": () => [sprite("rocks", {frame:37}),scale(4.5)],
-                    "m": () => [sprite("beam", {frame:38}),scale(4.5)],
-                    "n": () => [sprite("crate", {frame:39}),scale(4.5)],
-                    "o": () => [sprite("crate2", {frame:52}),scale(4.5)],
-                    "p": () => [sprite("droplets", {frame:53}),scale(4.5)],
-                    "q": () => [sprite("editorblock", {frame:54}),scale(4.5)],
-                    "r": () => [sprite("jet", {frame:55}),scale(4.5)],
-                    "s": () => [sprite("jet2", {frame:56}),scale(4.5)],
-                    "t": () => [sprite("jet3", {frame:57}),scale(4.5)],
-                    "u": () => [sprite("pod1", {frame:58}),scale(4.5)],
-                    "v": () => [sprite("portrait", {frame:59}),scale(4.5)],
-                },
             })
 
     ]
@@ -1114,11 +542,10 @@ scene('level1',()=> {
     // ######################## PLAYER #########################
 
     const SPEED = 250
-    let JUMP_FORCE = 400
+    let JUMP_FORCE = 350
     const ENEMY_SPEED = 60
     const BULLET_SPEED = 200
     let PLAYER_HEALTH = 100
-    let gunDestroyed = false
 
     const player = add([
         sprite('astro'),
@@ -1126,8 +553,9 @@ scene('level1',()=> {
         anchor("center"),
         pos(100,1600),
         area(),
-        body(),
+        body({jumpForce: JUMP_FORCE}),
         health(PLAYER_HEALTH),
+        doubleJump(),
         z(49),
         "player"
     ])
@@ -1151,16 +579,11 @@ scene('level1',()=> {
     })
     function Dash(dashX,dashY){
         isDashAvailable = false
-        camScale(1.1,1)
-        const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.2,(p) => player.pos = p,easings.easeOutSine)
+        const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.3,(p) => player.pos = p,easings.easeOutSine)
         onUpdate(()=>{
             player.onCollide("block",()=>{
-                // console.log("player collide with block")
                 t.cancel()
             })
-        })
-        wait(0.5,()=>{
-            camScale(1,1)
         })
     }
 
@@ -1169,111 +592,106 @@ scene('level1',()=> {
     let dirY = 0
     if(!isGamepadConnected){
 
-        onUpdate(()=>{
-            onKeyDown("z",()=>{
+        onUpdate(()=> {
+            onKeyDown("z", () => {
                 gun.angle = -90
                 dirX = 0
-                dirY = 100
+                dirY = 0
             })
-            onKeyDown("s",()=>{
+            onKeyDown("s", () => {
                 gun.angle = 90
                 dirX = 0
-                dirY = -100
+                dirY = 0
             })
 
-            onKeyDown("q",()=>{
+            onKeyDown("q", () => {
                 gun.angle = 180
-                dirX = 100
+                dirX = -200
                 dirY = 0
             })
 
-            onKeyDown("d",()=>{
+            onKeyDown("d", () => {
                 gun.angle = 0
-                dirX = -100
+                dirX = 200
                 dirY = 0
             })
 
-            if(isKeyDown("z") && isKeyDown("d"))
-            {
+            if (isKeyDown("z") && isKeyDown("d")) {
                 console.log("up right")
                 gun.angle = -45
-                dirX = -100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("z") && isKeyDown("q"))
-            {
+            if (isKeyDown("z") && isKeyDown("q")) {
                 console.log("up left")
                 gun.angle = -135
-                dirX = 100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("s") && isKeyDown("q"))
-            {
+            if (isKeyDown("s") && isKeyDown("q")) {
                 console.log("down left")
                 gun.angle = 135
-                dirX = 100
-                dirY = -100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("s") && isKeyDown("d"))
-            {
+            if (isKeyDown("s") && isKeyDown("d")) {
                 console.log("down right")
                 gun.angle = 45
-                dirX = -100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
         })
 
         onKeyDown("d",()=>{
             player.move(SPEED, 0)
-            onUpdate(()=>{
-                if(isDashing){
-                    player.move(0,0)
-                    wait(3,()=>{
-                        isDashing = false
-                        console.log("waiting 3s ")
-                    })
-
-                }
-            })
+            if (player.isGrounded() && player.curAnim() !== "run") {
+                player.play("run")
+            }
         })
 
         onKeyDown("q",()=>{
             player.move(-SPEED, 0)
+            if (player.isGrounded() && player.curAnim() !== "run") {
+                player.play("run")
+            }
         })
 
         let canJump  = true
         onKeyPress("space", () => {
             if (player.isGrounded()) {
                 canJump = true
-                // console.log(canJump)
-                // console.log("player grounded")
                 player.jump(JUMP_FORCE)
                 player.play("jump")
             } else {
-                // console.log("player on air")
-                // console.log(canJump)
                 if(canJump){
-                    // console.log("can jump")
-                    Dash(0,-100)
+                    player.jump()
                     canJump = false
-                } else {
-                    // console.log("cannon jump")
                 }
             }
         })
 
-        onKeyPress("shift",(position)=> {
+        let playerCanShoot = true
+        onKeyPress("m",(position)=> {
 
             const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-            spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
-            //debug.log(mousePos().angle())
+            if(playerCanShoot){
+                spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
+                playerCanShoot = false
+                wait(1,()=>{
+                    playerCanShoot = true
+                })
+            }
+
+
+        })
+
+        onKeyPress("l",()=>{
             if(!player.isGrounded()){
                 if(isDashAvailable){
                     isDashing = true
                     Dash(dirX,dirY)
                 }
             }
-
         })
     }
 
@@ -1289,23 +707,29 @@ scene('level1',()=> {
             onUpdate(()=>{
                 if (v.x > 0 && v.y === 0){
                     gun.angle= 0
-                    dirX = -100
+                    dirX = 200
                     dirY = 0
+                    if (player.isGrounded() && player.curAnim() !== "run") {
+                        player.play("run")
+                    }
                 }
                 if (v.x === 0 && v.y > 0){
                     gun.angle= 90
                     dirX = 0
-                    dirY = -100
+                    dirY = 0
                 }
                 if (v.x < 0 && v.y === 0){
                     gun.angle= 180
-                    dirX = 100
+                    dirX = -200
                     dirY = 0
+                    if (player.isGrounded() && player.curAnim() !== "run") {
+                        player.play("run")
+                    }
                 }
                 if (v.x === 0 && v.y < 0){
                     gun.angle= -90
                     dirX = 0
-                    dirY = 100
+                    dirY = 0
                 }
             })
         })
@@ -1314,54 +738,29 @@ scene('level1',()=> {
         onGamepadButtonPress("south", () => {
             if (player.isGrounded()) {
                 canJump = true
-                // console.log(canJump)
-                // console.log("player grounded")
                 player.jump(JUMP_FORCE)
                 player.play("jump")
             } else {
-                // console.log("player on air")
-                // console.log(canJump)
                 if(canJump){
-                    // console.log("can jump")
-                    Dash(0,-100)
+                    player.jump()
                     canJump = false
-                } else {
-                    // console.log("cannon jump")
                 }
             }
         })
 
-        onUpdate(()=>{
-            onGamepadButtonPress("dpad-up",()=>{
-                console.log("controller dpad up")
-                gun.angle = -90
-                dirX = 0
-                dirY = 100
-            })
-            onGamepadButtonDown("dpad-down",()=>{
-                console.log("controller dpad down")
-                gun.angle = 90
-                dirX = 0
-                dirY = -100
-            })
-            onGamepadButtonDown("dpad-left",()=>{
-                gun.angle = 180
-                dirX = 100
-                dirY = 0
-            })
-            onGamepadButtonDown("dpad-right",()=>{
-                gun.angle = 0
-                dirX = -100
-                dirY = 0
-            })
+        let playerCanShoot = true
+        onGamepadButtonPress("west",(position)=> {
+            const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
+            if(playerCanShoot){
+                spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
+                playerCanShoot = false
+                wait(1,()=>{
+                    playerCanShoot = true
+                })
+            }
         })
 
-        onGamepadButtonPress("west",(position)=> {
-            console.log("west")
-
-            const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-            spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
-            //debug.log(mousePos().angle())
+        onGamepadButtonPress("east",()=>{
             if(!player.isGrounded()){
                 if(!player.isGrounded()){
                     if(isDashAvailable){
@@ -1403,12 +802,7 @@ scene('level1',()=> {
     ])
 
     onUpdate(() => {
-        // const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-        // 	console.log("muzzle: ", muzzlePos)
         gun.pos = player.pos
-        // 	console.log(gun.pos)
-        // gun.angle = mousePos().angle(gun.pos)
-        // 	console.log(gun.angle)
     })
 
     let isDashing = false
@@ -1416,10 +810,11 @@ scene('level1',()=> {
     function spawnBullet(bulletposX, bulletPosY, direction) {
 
         add([
-            rect(25, 3),
+            rect(12,10),
+            outline(2,rgb(0,0,0)),
             pos(gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))),
             anchor("top"),
-            color(165, 36, 34),
+            color(255,255,0),
             area(),
             move(Vec2.fromAngle(gun.angle), 400),
             z(20),
@@ -1463,139 +858,37 @@ scene('level1',()=> {
         };
     }
 
-    const enemy = add([
-        sprite("ghosty"),
-        scale(1.5),
-        pos(450,50),
-        area(),
-        body(),
-        anchor("center"),
-        state("move", [ "idle", "attack", "move" ]),
-    ])
-
-
-    enemy.onStateEnter("idle", async () => {
-        await wait(0.5)
-        enemy.enterState("attack")
-    })
-
-    enemy.onStateEnter("attack", async () => {
-
-        // Don't do anything if player doesn't exist anymore
-        if (player.exists() && enemy.exists()) {
-
-            const dir = player.pos.sub(enemy.pos).unit()
-
-            add([
-                pos(enemy.pos),
-                move(dir, BULLET_SPEED),
-                rect(12, 12),
-                area(),
-                offscreen({ destroy: true }),
-                anchor("center"),
-                color(BLUE),
-                "enemyBullet",
-            ])
-
-        }
-
-        await wait(2)
-        enemy.enterState("move")
-
-    })
-
-    enemy.onStateEnter("move", async () => {
-        await wait(2)
-        enemy.enterState("idle")
-    })
-
-
-    enemy.onStateUpdate("move", () => {
-        if (!player.exists()) return
-        const dir = player.pos.sub(enemy.pos).unit()
-        enemy.move(dir.scale(ENEMY_SPEED))
-    })
-
-
 
     //#############################################################
 
-
-
-
-
-
-    // ################# Bullet ######################
-
-    // function spawnBullet(p) {
-    // 	if (gunDestroyed) {
-    // 		add([
-    // 			rect(12, 12),
-    // 			pos(p),
-    // 			anchor('center'),
-    // 			area(),
-    // 			color(300, 0, 0),
-    // 			move(0, 400),
-    // 			offscreen({ destroy: true }),
-    // 			'playerBullet',
-    // 		])
-    // 	}
-    // }
-
-    // onKeyPress('up', () => {
-    // 	spawnBullet(player.pos.add(20, 20));
-    // })
-
     // ---------------- COLLIDE -----------------
 
-    player.onCollide("enemyBullet", (bullet) => {
-        destroy(bullet)
-        player.hurt(20)
-        healthBar.value -= 20
-        healthBar.text = healthBar.value + "pv"
-        console.log(healthBar.value)
-        if (healthBar.value <= 0)
-        {
-            go('lose')
-            wait(2,()=>{
-                go('scene')
-            })
-        }
+
+    onCollide("player", "battery", (p, battery) => {
+        destroy(battery)
+        score.value += 10
+        score.text = "score: " + score.value
+        play("battery")
+
     })
 
-    enemy.onCollide("playerBullet", (bullet) => {
-        destroy(enemy)
-        console.log("touch enemy")
-        shake(200)
-    })
-
-    // player.onCollide('gun', (m) => {
-    // 	destroy(m)
-    // 	gunDestroyed = true
-    // })
-
-    player.onCollide("dangerous", () => {
-        player.hurt(20)
-        healthBar.value -= 20
-        healthBar.text = healthBar.value + "pv"
-        console.log(healthBar.value)
-        if (healthBar.value <= 0)
-        {
-            go('lose')
-            wait(2,()=>{
-                go('scene')
-            })
-        }
-    })
 
     onCollide("playerBullet", "dangerous", (p, d) => {
         destroy(d)
-        shake(10)
+        score.value += 20
+        score.text = "score: " + score.value;
     })
+
+    onCollide("playerBullet","block",(pb,b)=>{
+        destroy(pb)
+    })
+
+
 
     // ########################### SCORE #############################
 
     const score = add([
+        fixed(),
         text("score: 0"),
         pos(width()-200,20),
         {
@@ -1625,12 +918,39 @@ scene('level1',()=> {
     // ########################## Health ############################
 
     const healthBar = add([
-        text( "100 pv"),
-        pos(width()/2,20),
+
+        fixed(),
+        text("❤️❤️❤️❤️❤️"),
+        pos(width() / 15, 20),
         {
-            value:100,
+            value: 100,
         }
     ])
+
+    player.onCollide("dangerous", () => {
+        player.hurt(20);
+        healthBar.value -= 20;
+        updateHealthBar();
+        if (healthBar.value <= 0) {
+            go('lose');
+            wait(2, () => {
+                go('scene');
+            });
+        }
+    });
+
+    function updateHealthBar() {
+        let remainingStars = Math.ceil(healthBar.value / 20);
+        healthBar.text = "❤️".repeat(remainingStars);
+        console.log(healthBar.value);
+    }
+
+
+    onCollide("playerBullet", "dangerous", (p, d) => {
+        destroy(d)
+        score.value += 20
+        score.text = "score: " + score.value;
+    })
 
     //################################################################
 
@@ -1640,7 +960,14 @@ scene('level1',()=> {
 // ############################ SCENE LVL2 ################################"
 scene('level2',()=> {
 
-        const level2 = [
+    loadSound('part2', 'sounds/Arcade_Partie_2.wav')
+
+    play('part2',{
+        volume: 0.3,
+        loop: true,
+    })
+
+    const level2 = [
         addLevel(
             [
                 '                                                                                                                 ',
@@ -1716,31 +1043,31 @@ scene('level2',()=> {
                 'k   k   k   k               k       k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k',
                 'k   k   k   k               k       k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k   k',
                 'kkk kkk kkk k               k       k   k   k               k   k   kabababababababababababab   k   k   k   k   k',
-                'k   k                       k       k   k   k               k   k   kdedededededededededededeabababababab   k   k',
-                'k   k                       kcccc       k   k               k   k  ab                        dededededede   k   k',
-                'k kkk           iiiii       k   c       k   fffffff             k  de                                    abab   k',
-                'k cc                 i      k   c       k                       kabffffff                                dedecc k',
-                'kc  c                 i     k   ccccc   k                       kde                                         c  ck',
-                'k                     iiiiiik       c   k                                                                       k',
-                'k                                   cccck                ff                           ffff                      k',
-                'k                                       k                                                                       k',
+                'k   k           *        $$$k       k   k   k  $$$$         k   k   kdedededededededededededeabababababab   k   k',
+                'k   k      *          $$  $ kcccc       k   k $$$$$         k   k  ab$ $$                    dededededede   k   k',
+                'k kkk           iiiii $$ $$$k   c       k   fffffff             k  de$$ $ *                              abab   k',
+                'k cc                 i $$$$ k   c       k                       kabffffff                                dedecc k',
+                'kc  cff               i$$  $k   ccccc   k                       kde                          $$$            c  ck',
+                'k                     iiiiiik       c   k     *                               *       $$$$                      k',
+                'k                                   cccck                ff                           ffff         $$           k',
+                'k $$$                                   k                      $$                                               k',
                 'kiiii     ccc       fffff               kjj                   jjj                                   ccc   iiiiiik',
-                'k    i    ckc                           abk                   kab          cccccccccccc             k c         k',
-                'k     i   c  c                          dekjj               jjkde         c            c           c  c         k',
-                'k     i   c   c                                                          c              ccc       c   c         k',
-                'k    i    ckk kc              ffff                fff                   c                        ck kkc       ffk',
-                'kiiii     c   c                                                                                   c   c         k',
+                'k    i    ckc                           abk__               $$kab          cccccccccccc             k c     $$$ k',
+                'k     i   c  c                          dekjj               jjkde         c            c           c  c     $ $$k',
+                'k     i   c   c                                                          c  $ $$  $$$   ccc       c   c       $$k',
+                'k    i    ckk kc              ffff                fff    *              c    $  $$               ck kkc       ffk',
+                'kiiii     c   c    $$$                                                      *   $$$$              c   c         k',
                 'k cc      c  c     ff                                                       ffffffff       ccc     c  c         k',
-                'kc  c     ckc     f                        abababab   abababab                            c         k c fff     k',
-                'k         ccc    f                     iiiidededede  fdedededeiiii                       c          ccc         k',
+                'kc  c     ckc     f                     ___abababab   abababab                            c         k c fff     k',
+                'k         ccc    f                     iiiidededede  fdedededeiiii      _________________c          ccc         k',
                 'k                                      abab k   k       k   k abab      ccccccccccccccccc                       k',
-                'kccccc                               iidede k   k       k   k dedeii                                       ccccck',
-                'k   kc                               ab k   k   k       k   k   k ab                                       ck   k',
-                'k   kc                            iiide k   k   kf      k   k   k deiii                                    ck   k',
-                'kkk kcccccccc                     abk   k   k   k       k   k   k   kab       fff                   cccccccck   k',
+                'kccccc           *                   iidede k   k$$$$$$$k   k dedeii                                       ccccck',
+                'k   kc                               ab k   k   k$$$$$$$k   k   k ab__                                     ck   k',
+                'k   kc     $$       fff           iiide k   k   kf$$$$$$k   k   k deiii             *                 $$$  ck   k',
+                'kkk kcccccccc                   __abk   k   k   k $$$$$$k   k   k   kab       fff                   cccccccck   k',
                 'k   kkk kkk k                   iidek   k   k   k     ffk   k   k   kdeii                           k   k   k   k',
-                'k   k   k   k                  iab  k   k   k   k       k   k   k   k  abi                    ff    k   k   k   k',
-                'k kkk   k   kcccccccccccccccciiide  k   k   k   k       k   k   k   k  deiii         ccccccccccccccck   k   k   k',
+                'k   k   k   k________________  iab  k   k   k   k       k   k   k   k  abi           _________ff    k   k   k   k',
+                'k kkk   k   kcccccccccccccccciiide  k   k   k   k_______k   k   k   k  deiii_________ccccccccccccccck   k   k   k',
                 'kccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccckccck',
 //////////////////////////////////////////////////////////////////////|
 
@@ -1768,6 +1095,10 @@ scene('level2',()=> {
                     "n": () => [sprite("map", {frame:208}),scale(1), area(),body({isStatic:true}), "block" ],
                     "o": () => [sprite("map", {frame:209}),scale(1), area(),body({isStatic:true}), "block" ],
                     "p": () => [sprite("map", {frame:210}),scale(1), area(),body({isStatic:true}), "block" ],
+
+                    "_": () => [sprite("spike"),scale(1),area(),  "dangerous"],
+                    "$": () => [sprite("battery", {frame:1}),scale(2.5),area(), "battery"],
+                    "*": () => [sprite("pod", {frame:3}),scale(2.5), anchor("bot"), patrol(), offscreen({ hide: true }),  area(), "dangerous"],
                 },
             }),
         addLevel(
@@ -1835,79 +1166,16 @@ scene('level2',()=> {
                     "u": () => [sprite("map", {frame:118}),scale(1)],
                     "v": () => [sprite("map", {frame:119}),scale(1)],
                 },
-            }),
-        addLevel(
-            [
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-                '                                                                                                                 ',
-            ], {
-                tileWidth: 36,
-                tileHeight: 36,
-                tiles: {
-
-
-                    "a": () => [sprite("battery", {frame:1}),scale(1)],
-                    "b": () => [sprite("explosion", {frame:14}),scale(1)],
-                    "c": () => [sprite("explosion2", {frame:15}),scale(1)],
-                    "d": () => [sprite("smoke", {frame:16}),scale(1)],
-                    "e": () => [sprite("timerswitch", {frame:17}),scale(1)],
-                    "f": () => [sprite("button", {frame:18}),scale(1)],
-                    "g": () => [sprite("powerlight", {frame:19}),scale(1)],
-                    "h": () => [sprite("shipbits", {frame:33}),scale(1)],
-                    "i": () => [sprite("pit", {frame:34}),scale(1)],
-                    "*": () => [sprite("pod", {frame:3}),scale(2.5)],
-                    "k": () => [sprite("messagebox", {frame:36}),scale(1)],
-                    "l": () => [sprite("rocks", {frame:37}),scale(1)],
-                    "m": () => [sprite("beam", {frame:38}),scale(1)],
-                    "n": () => [sprite("crate", {frame:39}),scale(1)],
-                    "o": () => [sprite("crate2", {frame:52}),scale(1)],
-                    "p": () => [sprite("droplets", {frame:53}),scale(1)],
-                    "q": () => [sprite("editorblock", {frame:54}),scale(1)],
-                    "r": () => [sprite("jet", {frame:55}),scale(1)],
-                    "s": () => [sprite("jet2", {frame:56}),scale(1)],
-                    "t": () => [sprite("jet3", {frame:57}),scale(1)],
-                    "u": () => [sprite("pod1", {frame:58}),scale(1)],
-                    "v": () => [sprite("portrait", {frame:59}),scale(1)],
-                },
             })
     ]
 
     // ######################## PLAYER #########################
 
     const SPEED = 250
-    let JUMP_FORCE = 400
+    let JUMP_FORCE = 350
     const ENEMY_SPEED = 60
     const BULLET_SPEED = 200
     let PLAYER_HEALTH = 100
-    let gunDestroyed = false
 
     const player = add([
         sprite('astro'),
@@ -1915,8 +1183,9 @@ scene('level2',()=> {
         anchor("center"),
         pos(110,750),
         area(),
-        body(),
+        body({jumpForce: JUMP_FORCE}),
         health(PLAYER_HEALTH),
+        doubleJump(),
         z(49),
         "player"
     ])
@@ -1940,16 +1209,11 @@ scene('level2',()=> {
     })
     function Dash(dashX,dashY){
         isDashAvailable = false
-        camScale(1.1,1)
-        const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.2,(p) => player.pos = p,easings.easeOutSine)
+        const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.3,(p) => player.pos = p,easings.easeOutSine)
         onUpdate(()=>{
             player.onCollide("block",()=>{
-                // console.log("player collide with block")
                 t.cancel()
             })
-        })
-        wait(0.5,()=>{
-            camScale(1,1)
         })
     }
 
@@ -1958,111 +1222,106 @@ scene('level2',()=> {
     let dirY = 0
     if(!isGamepadConnected){
 
-        onUpdate(()=>{
-            onKeyDown("z",()=>{
+        onUpdate(()=> {
+            onKeyDown("z", () => {
                 gun.angle = -90
                 dirX = 0
-                dirY = 100
+                dirY = 0
             })
-            onKeyDown("s",()=>{
+            onKeyDown("s", () => {
                 gun.angle = 90
                 dirX = 0
-                dirY = -100
+                dirY = 0
             })
 
-            onKeyDown("q",()=>{
+            onKeyDown("q", () => {
                 gun.angle = 180
-                dirX = 100
+                dirX = -200
                 dirY = 0
             })
 
-            onKeyDown("d",()=>{
+            onKeyDown("d", () => {
                 gun.angle = 0
-                dirX = -100
+                dirX = 200
                 dirY = 0
             })
 
-            if(isKeyDown("z") && isKeyDown("d"))
-            {
+            if (isKeyDown("z") && isKeyDown("d")) {
                 console.log("up right")
                 gun.angle = -45
-                dirX = -100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("z") && isKeyDown("q"))
-            {
+            if (isKeyDown("z") && isKeyDown("q")) {
                 console.log("up left")
                 gun.angle = -135
-                dirX = 100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("s") && isKeyDown("q"))
-            {
+            if (isKeyDown("s") && isKeyDown("q")) {
                 console.log("down left")
                 gun.angle = 135
-                dirX = 100
-                dirY = -100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("s") && isKeyDown("d"))
-            {
+            if (isKeyDown("s") && isKeyDown("d")) {
                 console.log("down right")
                 gun.angle = 45
-                dirX = -100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
         })
 
         onKeyDown("d",()=>{
             player.move(SPEED, 0)
-            onUpdate(()=>{
-                if(isDashing){
-                    player.move(0,0)
-                    wait(3,()=>{
-                        isDashing = false
-                        console.log("waiting 3s ")
-                    })
-
-                }
-            })
+            if (player.isGrounded() && player.curAnim() !== "run") {
+                player.play("run")
+            }
         })
 
         onKeyDown("q",()=>{
             player.move(-SPEED, 0)
+            if (player.isGrounded() && player.curAnim() !== "run") {
+                player.play("run")
+            }
         })
 
         let canJump  = true
         onKeyPress("space", () => {
             if (player.isGrounded()) {
                 canJump = true
-                // console.log(canJump)
-                // console.log("player grounded")
                 player.jump(JUMP_FORCE)
                 player.play("jump")
             } else {
-                // console.log("player on air")
-                // console.log(canJump)
                 if(canJump){
-                    // console.log("can jump")
-                    Dash(0,-100)
+                    player.jump()
                     canJump = false
-                } else {
-                    // console.log("cannon jump")
                 }
             }
         })
 
-        onKeyPress("shift",(position)=> {
+        let playerCanShoot = true
+        onKeyPress("m",(position)=> {
 
             const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-            spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
-            //debug.log(mousePos().angle())
+            if(playerCanShoot){
+                spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
+                playerCanShoot = false
+                wait(1,()=>{
+                    playerCanShoot = true
+                })
+            }
+
+
+        })
+
+        onKeyPress("l",()=>{
             if(!player.isGrounded()){
                 if(isDashAvailable){
                     isDashing = true
                     Dash(dirX,dirY)
                 }
             }
-
         })
     }
 
@@ -2078,23 +1337,29 @@ scene('level2',()=> {
             onUpdate(()=>{
                 if (v.x > 0 && v.y === 0){
                     gun.angle= 0
-                    dirX = -100
+                    dirX = 200
                     dirY = 0
+                    if (player.isGrounded() && player.curAnim() !== "run") {
+                        player.play("run")
+                    }
                 }
                 if (v.x === 0 && v.y > 0){
                     gun.angle= 90
                     dirX = 0
-                    dirY = -100
+                    dirY = 0
                 }
                 if (v.x < 0 && v.y === 0){
                     gun.angle= 180
-                    dirX = 100
+                    dirX = -200
                     dirY = 0
+                    if (player.isGrounded() && player.curAnim() !== "run") {
+                        player.play("run")
+                    }
                 }
                 if (v.x === 0 && v.y < 0){
                     gun.angle= -90
                     dirX = 0
-                    dirY = 100
+                    dirY = 0
                 }
             })
         })
@@ -2103,54 +1368,29 @@ scene('level2',()=> {
         onGamepadButtonPress("south", () => {
             if (player.isGrounded()) {
                 canJump = true
-                // console.log(canJump)
-                // console.log("player grounded")
                 player.jump(JUMP_FORCE)
                 player.play("jump")
             } else {
-                // console.log("player on air")
-                // console.log(canJump)
                 if(canJump){
-                    // console.log("can jump")
-                    Dash(0,-100)
+                    player.jump()
                     canJump = false
-                } else {
-                    // console.log("cannon jump")
                 }
             }
         })
 
-        onUpdate(()=>{
-            onGamepadButtonPress("dpad-up",()=>{
-                console.log("controller dpad up")
-                gun.angle = -90
-                dirX = 0
-                dirY = 100
-            })
-            onGamepadButtonDown("dpad-down",()=>{
-                console.log("controller dpad down")
-                gun.angle = 90
-                dirX = 0
-                dirY = -100
-            })
-            onGamepadButtonDown("dpad-left",()=>{
-                gun.angle = 180
-                dirX = 100
-                dirY = 0
-            })
-            onGamepadButtonDown("dpad-right",()=>{
-                gun.angle = 0
-                dirX = -100
-                dirY = 0
-            })
+        let playerCanShoot = true
+        onGamepadButtonPress("west",(position)=> {
+            const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
+            if(playerCanShoot){
+                spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
+                playerCanShoot = false
+                wait(1,()=>{
+                    playerCanShoot = true
+                })
+            }
         })
 
-        onGamepadButtonPress("west",(position)=> {
-            console.log("west")
-
-            const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-            spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
-            //debug.log(mousePos().angle())
+        onGamepadButtonPress("east",()=>{
             if(!player.isGrounded()){
                 if(!player.isGrounded()){
                     if(isDashAvailable){
@@ -2192,12 +1432,7 @@ scene('level2',()=> {
     ])
 
     onUpdate(() => {
-        // const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-        // 	console.log("muzzle: ", muzzlePos)
         gun.pos = player.pos
-        // 	console.log(gun.pos)
-        // gun.angle = mousePos().angle(gun.pos)
-        // 	console.log(gun.angle)
     })
 
     let isDashing = false
@@ -2205,10 +1440,11 @@ scene('level2',()=> {
     function spawnBullet(bulletposX, bulletPosY, direction) {
 
         add([
-            rect(25, 3),
+            rect(12,10),
+            outline(2,rgb(0,0,0)),
             pos(gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))),
             anchor("top"),
-            color(165, 36, 34),
+            color(255,255,0),
             area(),
             move(Vec2.fromAngle(gun.angle), 400),
             z(20),
@@ -2252,139 +1488,35 @@ scene('level2',()=> {
         };
     }
 
-    const enemy = add([
-        sprite("ghosty"),
-        scale(1.5),
-        pos(450,50),
-        area(),
-        body(),
-        anchor("center"),
-        state("move", [ "idle", "attack", "move" ]),
-    ])
-
-
-    enemy.onStateEnter("idle", async () => {
-        await wait(0.5)
-        enemy.enterState("attack")
-    })
-
-    enemy.onStateEnter("attack", async () => {
-
-        // Don't do anything if player doesn't exist anymore
-        if (player.exists() && enemy.exists()) {
-
-            const dir = player.pos.sub(enemy.pos).unit()
-
-            add([
-                pos(enemy.pos),
-                move(dir, BULLET_SPEED),
-                rect(12, 12),
-                area(),
-                offscreen({ destroy: true }),
-                anchor("center"),
-                color(BLUE),
-                "enemyBullet",
-            ])
-
-        }
-
-        await wait(2)
-        enemy.enterState("move")
-
-    })
-
-    enemy.onStateEnter("move", async () => {
-        await wait(2)
-        enemy.enterState("idle")
-    })
-
-
-    enemy.onStateUpdate("move", () => {
-        if (!player.exists()) return
-        const dir = player.pos.sub(enemy.pos).unit()
-        enemy.move(dir.scale(ENEMY_SPEED))
-    })
-
-
 
     //#############################################################
 
-
-
-
-
-
-    // ################# Bullet ######################
-
-    // function spawnBullet(p) {
-    // 	if (gunDestroyed) {
-    // 		add([
-    // 			rect(12, 12),
-    // 			pos(p),
-    // 			anchor('center'),
-    // 			area(),
-    // 			color(300, 0, 0),
-    // 			move(0, 400),
-    // 			offscreen({ destroy: true }),
-    // 			'playerBullet',
-    // 		])
-    // 	}
-    // }
-
-    // onKeyPress('up', () => {
-    // 	spawnBullet(player.pos.add(20, 20));
-    // })
-
     // ---------------- COLLIDE -----------------
 
-    player.onCollide("enemyBullet", (bullet) => {
-        destroy(bullet)
-        player.hurt(20)
-        healthBar.value -= 20
-        healthBar.text = healthBar.value + "pv"
-        console.log(healthBar.value)
-        if (healthBar.value <= 0)
-        {
-            go('lose')
-            wait(2,()=>{
-                go('scene')
-            })
-        }
+
+    onCollide("player", "battery", (p, battery) => {
+        destroy(battery)
+        score.value += 10
+        score.text = "score: " + score.value
     })
 
-    enemy.onCollide("playerBullet", (bullet) => {
-        destroy(enemy)
-        console.log("touch enemy")
-        shake(200)
-    })
-
-    // player.onCollide('gun', (m) => {
-    // 	destroy(m)
-    // 	gunDestroyed = true
-    // })
-
-    player.onCollide("dangerous", () => {
-        player.hurt(20)
-        healthBar.value -= 20
-        healthBar.text = healthBar.value + "pv"
-        console.log(healthBar.value)
-        if (healthBar.value <= 0)
-        {
-            go('lose')
-            wait(2,()=>{
-                go('scene')
-            })
-        }
-    })
 
     onCollide("playerBullet", "dangerous", (p, d) => {
         destroy(d)
-        shake(10)
+        score.value += 20
+        score.text = "score: " + score.value;
     })
+
+    onCollide("playerBullet","block",(pb,b)=>{
+        destroy(pb)
+    })
+
+
 
     // ########################### SCORE #############################
 
     const score = add([
+        fixed(),
         text("score: 0"),
         pos(width()-200,20),
         {
@@ -2396,38 +1528,71 @@ scene('level2',()=> {
 
     // ############################# TIMER ###############################
 
-    // const timer = add([
-    // 	text("0"),
-    // 	pos(width()-200,60),
-    // 	{
-    // 		value:0,
-    // 	},
-    // ])
-    //
-    // loop(1,()=>{
-    // 	timer.value ++
-    // 	timer.text = timer.value
-    // })
+    const timer = add([
+        fixed(),
+        text("0"),
+        pos(width()-400,20),
+        {
+            value:0,
+        },
+    ])
+
+    loop(1,()=>{
+        timer.value ++
+        timer.text = timer.value
+    })
 
     // ###############################################################
 
     // ########################## Health ############################
 
     const healthBar = add([
-        text( "100 pv"),
-        pos(width()/2,20),
+
+        fixed(),
+        text("❤️❤️❤️❤️❤️"),
+        pos(width() / 15, 20),
         {
-            value:100,
+            value: 100,
         }
     ])
 
-    //################################################################
+    player.onCollide("dangerous", () => {
+        player.hurt(20);
+        healthBar.value -= 20;
+        updateHealthBar();
+        if (healthBar.value <= 0) {
+            go('lose');
+            wait(2, () => {
+                go('scene');
+            });
+        }
+    });
+
+    function updateHealthBar() {
+        let remainingStars = Math.ceil(healthBar.value / 20);
+        healthBar.text = "❤️".repeat(remainingStars);
+        console.log(healthBar.value);
+    }
+
+
+    onCollide("playerBullet", "dangerous", (p, d) => {
+        destroy(d)
+        score.value += 20
+        score.text = "score: " + score.value;
+    })
 
 
 })
 
 // ############################ SCENE LVL3 ################################"
 scene('level3',()=> {
+
+    loadSound('boss1', 'sounds/Arcade_Boss_1.wav')
+
+    play('boss1',{
+        volume: 0.3,
+        loop: true
+    })
 
     const level3 = [
         addLevel(
@@ -2436,14 +1601,14 @@ scene('level3',()=> {
                 '                                            ',
                 '                                            ',
                 '                                            ',
-                '                 VVVVVVVVVV                 ',
-                '                 VVVVVVVVVV                 ',
-                '               VVVVV    VVVVV               ',
-                '               VVVVV    VVVVV               ',
-                '             VVVVVVV    VVVVVVV             ',
-                '             VVVVV        VVVVV             ',
-                '             VVVVV        VVVVV             ',
-                '             vvv            vvv             ',
+                '                 vvvvvvvvvv                 ',
+                '                 vvvvvvvvvv                 ',
+                '               vvvvvvvvvvvvvv               ',
+                '               vvvvv    vvvvv               ',
+                '             vvvvvvv    vvvvvvv             ',
+                '             vvvvv  nopq  vvvvv             ',
+                '             vvvvv        vvvvv             ',
+                '             vvv  no    pq  vvv             ',
                 '             vvv            vvv             ',
                 '             vvv            vvv             ',
                 '             vvv            vvv             ',
@@ -2520,43 +1685,43 @@ scene('level3',()=> {
             [
                 'ffffffffffffffffffffffffffffffffffffffffffff',
                 'fabjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjabf',
-                'fde              ababababab              def',
-                'fj               dedededede               jf',
-                'fj             ab          ab             jf',
-                'fj             de          de             jf',
-                'fj           ab              ab           jf',
-                'fj           de     abab     de           jf',
-                'fj         ab       dede       ab         jf',
-                'fj         de     ab    ab     de         jf',
-                'fj                de    de                jf',
-                'fj              ab        ab              jf',
+                'fde   $$$ $  $$  ababababab              def',
+                'fj   *  $  $$$   dedededede       *       jf',
+                'fj  $$$$  $$   ab $$$ $$ $ ab             jf',
+                'fj   iiiii     de  $$ $$$ $de             jf',
+                'fj           ab     $*$$ $$$ ab           jf',
+                'fj           de $$$ abab   $ de           jf',
+                'fj         ab  $  $ dede  $$$$ ab         jf',
+                'fj         de$$ $$ab    ab     de         jf',
+                'fj      iii  $ $ $de    de  $$            jf',
+                'fj              ab        ab        *     jf',
                 'fj              de        de              jf',
-                'fj                                        jf',
+                'fj                                  iiiii jf',
                 'fj                                        jf',
                 'fjbab                                  abajf',
-                'fjede                                  dedjf',
+                'fjede         iiiii                    dedjf',
                 'fj   ab                              ab   jf',
                 'fj   de                              de   jf',
                 'fj                                        jf',
+                'fj    *                      iiii         jf',
                 'fj                                        jf',
                 'fj                                        jf',
+                'fj          iiiiiii                       jf',
                 'fj                                        jf',
                 'fj                                        jf',
+                'fj                              *         jf',
+                'fj                                        jf',
+                'fjiiii              ii                 iiijf',
+                'fj                                   iiiiijf',
+                'fj                                  iiiiiijf',
+                'fj                                   iiiiijf',
+                'fj      *                              iiijf',
+                'fj       iiiii               iiiiii       jf',
                 'fj                                        jf',
                 'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
-                'fj                                        jf',
+                'fj                                      * jf',
                 'fj         abkabkabkababkabkabkab         jf',
-                'fj        kdekdekdekdedekdekdekdek        jf',
+                'fj        kdekdekdekdedekdekdekdek     iiijf',
                 'fj      abk  k  k  k    k  k  k  kab      jf',
                 'fj     kdek  k  k  k    k  k  k  kdek     jf',
                 'fj     k  k  k  k  k    k  k  k  k  k     jf',
@@ -2573,22 +1738,24 @@ scene('level3',()=> {
 
                     //////////////// PLATEFORM VERT ///////////////////////
 
-                    "a": () => [sprite("map", {frame:153}),scale(1), area(),body({isStatic:true}) ],
-                    "b": () => [sprite("map", {frame:154}),scale(1), area(),body({isStatic:true}) ],
+                    "a": () => [sprite("map", {frame:153}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "b": () => [sprite("map", {frame:154}),scale(1), area(),body({isStatic:true}),"block" ],
                     "c": () => [sprite("map", {frame:172}),scale(1), area(),body({isStatic:true}),"block" ],
-                    "d": () => [sprite("map", {frame:173}),scale(1), area(),body({isStatic:true}) ],
-                    "e": () => [sprite("map", {frame:174}),scale(1), area(),body({isStatic:true}) ],
+                    "d": () => [sprite("map", {frame:173}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "e": () => [sprite("map", {frame:174}),scale(1), area(),body({isStatic:true}),"block" ],
                     "f": () => [sprite("map", {frame:220}),scale(1), area(),body({isStatic:true}),"block" ],
-                    "g": () => [sprite("map", {frame:221}),scale(1), area(),body({isStatic:true}) ],
-                    "h": () => [sprite("map", {frame:222}),scale(1), area(),body({isStatic:true}) ],
-                    "i": () => [sprite("map", {frame:223}),scale(1), area(),body({isStatic:true}) ],
-                    "j": () => [sprite("map", {frame:224}),scale(1), area(),body({isStatic:true}) ],
-                    "k": () => [sprite("map", {frame:225}),scale(1), area(),body({isStatic:true}) ],
-                    "l": () => [sprite("map", {frame:226}),scale(1), area(),body({isStatic:true}) ],
-                    "m": () => [sprite("map", {frame:227}),scale(1), area(),body({isStatic:true}) ],
-                    "n": () => [sprite("map", {frame:228}),scale(1), area(),body({isStatic:true}) ],
-                    "o": () => [sprite("map", {frame:229}),scale(1), area(),body({isStatic:true}) ],
-                    "p": () => [sprite("map", {frame:230}),scale(1), area(),body({isStatic:true}) ],
+                    "g": () => [sprite("map", {frame:221}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "h": () => [sprite("map", {frame:222}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "i": () => [sprite("map", {frame:223}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "j": () => [sprite("map", {frame:224}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "k": () => [sprite("map", {frame:225}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "l": () => [sprite("map", {frame:226}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "m": () => [sprite("map", {frame:227}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "n": () => [sprite("map", {frame:228}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "o": () => [sprite("map", {frame:229}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "p": () => [sprite("map", {frame:230}),scale(1), area(),body({isStatic:true}),"block" ],
+                    "$": () => [sprite("battery", {frame:1}),scale(2.5),area(), "battery"],
+                    "*": () => [sprite("pod", {frame:3}),scale(2.5), anchor("bot"), patrol(), offscreen({ hide: true }),  area(), "dangerous"],
                 },
             }),
         addLevel(
@@ -2603,9 +1770,9 @@ scene('level3',()=> {
                 '                                            ',
                 '                                            ',
                 '                                            ',
-                '                    rrrr                    ',
+                '                                            ',
                 '           cc                  cc           ',
-                '           jj     rr    rr     jj           ',
+                '           jj                  jj           ',
                 '           jj                  jj           ',
                 '           jj   cc        cc   jj           ',
                 '           jj   jj        jj   jj           ',
@@ -2678,9 +1845,9 @@ scene('level3',()=> {
     // ######################## PLAYER #########################
 
     const SPEED = 250
-    let JUMP_FORCE = 400
-    const ENEMY_SPEED = 60
-    const BULLET_SPEED = 200
+    const JUMP_FORCE = 350
+    const ENEMY_SPEED = 100
+    const BULLET_SPEED = 500
     let PLAYER_HEALTH = 100
     let gunDestroyed = false
 
@@ -2690,8 +1857,9 @@ scene('level3',()=> {
         anchor("center"),
         pos(100,1500),
         area(),
-        body(),
+        body({jumpForce: JUMP_FORCE}),
         health(PLAYER_HEALTH),
+        doubleJump(),
         z(49),
         "player"
     ])
@@ -2715,16 +1883,11 @@ scene('level3',()=> {
     })
     function Dash(dashX,dashY){
         isDashAvailable = false
-        camScale(1.1,1)
-        const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.2,(p) => player.pos = p,easings.easeOutSine)
+        const t = tween(player.pos,vec2((player.pos.x)+dashX,(player.pos.y)+dashY),0.3,(p) => player.pos = p,easings.easeOutSine)
         onUpdate(()=>{
             player.onCollide("block",()=>{
-                // console.log("player collide with block")
                 t.cancel()
             })
-        })
-        wait(0.5,()=>{
-            camScale(1,1)
         })
     }
 
@@ -2733,111 +1896,106 @@ scene('level3',()=> {
     let dirY = 0
     if(!isGamepadConnected){
 
-        onUpdate(()=>{
-            onKeyDown("z",()=>{
+        onUpdate(()=> {
+            onKeyDown("z", () => {
                 gun.angle = -90
                 dirX = 0
-                dirY = 100
+                dirY = 0
             })
-            onKeyDown("s",()=>{
+            onKeyDown("s", () => {
                 gun.angle = 90
                 dirX = 0
-                dirY = -100
+                dirY = 0
             })
 
-            onKeyDown("q",()=>{
+            onKeyDown("q", () => {
                 gun.angle = 180
-                dirX = 100
+                dirX = -200
                 dirY = 0
             })
 
-            onKeyDown("d",()=>{
+            onKeyDown("d", () => {
                 gun.angle = 0
-                dirX = -100
+                dirX = 200
                 dirY = 0
             })
 
-            if(isKeyDown("z") && isKeyDown("d"))
-            {
+            if (isKeyDown("z") && isKeyDown("d")) {
                 console.log("up right")
                 gun.angle = -45
-                dirX = -100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("z") && isKeyDown("q"))
-            {
+            if (isKeyDown("z") && isKeyDown("q")) {
                 console.log("up left")
                 gun.angle = -135
-                dirX = 100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("s") && isKeyDown("q"))
-            {
+            if (isKeyDown("s") && isKeyDown("q")) {
                 console.log("down left")
                 gun.angle = 135
-                dirX = 100
-                dirY = -100
+                dirX = 0
+                dirY = 0
             }
-            if(isKeyDown("s") && isKeyDown("d"))
-            {
+            if (isKeyDown("s") && isKeyDown("d")) {
                 console.log("down right")
                 gun.angle = 45
-                dirX = -100
-                dirY = 100
+                dirX = 0
+                dirY = 0
             }
         })
 
         onKeyDown("d",()=>{
             player.move(SPEED, 0)
-            onUpdate(()=>{
-                if(isDashing){
-                    player.move(0,0)
-                    wait(3,()=>{
-                        isDashing = false
-                        console.log("waiting 3s ")
-                    })
-
-                }
-            })
+            if (player.isGrounded() && player.curAnim() !== "run") {
+                player.play("run")
+            }
         })
 
         onKeyDown("q",()=>{
             player.move(-SPEED, 0)
+            if (player.isGrounded() && player.curAnim() !== "run") {
+                player.play("run")
+            }
         })
 
         let canJump  = true
         onKeyPress("space", () => {
             if (player.isGrounded()) {
                 canJump = true
-                // console.log(canJump)
-                // console.log("player grounded")
                 player.jump(JUMP_FORCE)
                 player.play("jump")
             } else {
-                // console.log("player on air")
-                // console.log(canJump)
                 if(canJump){
-                    // console.log("can jump")
-                    Dash(0,-100)
+                    player.jump()
                     canJump = false
-                } else {
-                    // console.log("cannon jump")
                 }
             }
         })
 
-        onKeyPress("shift",(position)=> {
+        let playerCanShoot = true
+        onKeyPress("m",(position)=> {
 
             const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-            spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
-            //debug.log(mousePos().angle())
+            if(playerCanShoot){
+                spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
+                playerCanShoot = false
+                wait(1,()=>{
+                    playerCanShoot = true
+                })
+            }
+
+
+        })
+
+        onKeyPress("l",()=>{
             if(!player.isGrounded()){
                 if(isDashAvailable){
                     isDashing = true
                     Dash(dirX,dirY)
                 }
             }
-
         })
     }
 
@@ -2853,23 +2011,29 @@ scene('level3',()=> {
             onUpdate(()=>{
                 if (v.x > 0 && v.y === 0){
                     gun.angle= 0
-                    dirX = -100
+                    dirX = 200
                     dirY = 0
+                    if (player.isGrounded() && player.curAnim() !== "run") {
+                        player.play("run")
+                    }
                 }
                 if (v.x === 0 && v.y > 0){
                     gun.angle= 90
                     dirX = 0
-                    dirY = -100
+                    dirY = 0
                 }
                 if (v.x < 0 && v.y === 0){
                     gun.angle= 180
-                    dirX = 100
+                    dirX = -200
                     dirY = 0
+                    if (player.isGrounded() && player.curAnim() !== "run") {
+                        player.play("run")
+                    }
                 }
                 if (v.x === 0 && v.y < 0){
                     gun.angle= -90
                     dirX = 0
-                    dirY = 100
+                    dirY = 0
                 }
             })
         })
@@ -2878,54 +2042,29 @@ scene('level3',()=> {
         onGamepadButtonPress("south", () => {
             if (player.isGrounded()) {
                 canJump = true
-                // console.log(canJump)
-                // console.log("player grounded")
                 player.jump(JUMP_FORCE)
                 player.play("jump")
             } else {
-                // console.log("player on air")
-                // console.log(canJump)
                 if(canJump){
-                    // console.log("can jump")
-                    Dash(0,-100)
+                    player.jump()
                     canJump = false
-                } else {
-                    // console.log("cannon jump")
                 }
             }
         })
 
-        onUpdate(()=>{
-            onGamepadButtonPress("dpad-up",()=>{
-                console.log("controller dpad up")
-                gun.angle = -90
-                dirX = 0
-                dirY = 100
-            })
-            onGamepadButtonDown("dpad-down",()=>{
-                console.log("controller dpad down")
-                gun.angle = 90
-                dirX = 0
-                dirY = -100
-            })
-            onGamepadButtonDown("dpad-left",()=>{
-                gun.angle = 180
-                dirX = 100
-                dirY = 0
-            })
-            onGamepadButtonDown("dpad-right",()=>{
-                gun.angle = 0
-                dirX = -100
-                dirY = 0
-            })
+        let playerCanShoot = true
+        onGamepadButtonPress("west",(position)=> {
+            const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
+            if(playerCanShoot){
+                spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
+                playerCanShoot = false
+                wait(1,()=>{
+                    playerCanShoot = true
+                })
+            }
         })
 
-        onGamepadButtonPress("west",(position)=> {
-            console.log("west")
-
-            const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-            spawnBullet(muzzlePos.x, muzzlePos.y, Vec2.fromAngle(gun.angle).scale(1, -1))
-            //debug.log(mousePos().angle())
+        onGamepadButtonPress("east",()=>{
             if(!player.isGrounded()){
                 if(!player.isGrounded()){
                     if(isDashAvailable){
@@ -2967,12 +2106,7 @@ scene('level3',()=> {
     ])
 
     onUpdate(() => {
-        // const muzzlePos = gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))
-        // 	console.log("muzzle: ", muzzlePos)
         gun.pos = player.pos
-        // 	console.log(gun.pos)
-        // gun.angle = mousePos().angle(gun.pos)
-        // 	console.log(gun.angle)
     })
 
     let isDashing = false
@@ -2980,10 +2114,11 @@ scene('level3',()=> {
     function spawnBullet(bulletposX, bulletPosY, direction) {
 
         add([
-            rect(25, 3),
+            rect(12,10),
+            outline(2,rgb(0,0,0)),
             pos(gun.pos.add(Vec2.fromAngle(gun.angle).scale(50))),
             anchor("top"),
-            color(165, 36, 34),
+            color(255,255,0),
             area(),
             move(Vec2.fromAngle(gun.angle), 400),
             z(20),
@@ -3027,10 +2162,12 @@ scene('level3',()=> {
         };
     }
 
-    const enemy = add([
-        sprite("ghosty"),
-        scale(1.5),
-        pos(450,50),
+    // ############################### BOSS ##################################
+
+    const boss = add([
+        sprite("boss"),
+        scale(2),
+        pos(600,700),
         area(),
         body(),
         anchor("center"),
@@ -3038,128 +2175,76 @@ scene('level3',()=> {
     ])
 
 
-    enemy.onStateEnter("idle", async () => {
+    boss.onStateEnter("idle", async () => {
         await wait(0.5)
-        enemy.enterState("attack")
+        boss.enterState("attack")
     })
 
-    enemy.onStateEnter("attack", async () => {
+    boss.onStateEnter("attack", async () => {
 
         // Don't do anything if player doesn't exist anymore
-        if (player.exists() && enemy.exists()) {
+        if (player.exists() && boss.exists()) {
 
-            const dir = player.pos.sub(enemy.pos).unit()
+            const dir = player.pos.sub(boss.pos).unit()
 
             add([
-                pos(enemy.pos),
+                pos(boss.pos),
                 move(dir, BULLET_SPEED),
                 rect(12, 12),
                 area(),
                 offscreen({ destroy: true }),
                 anchor("center"),
                 color(BLUE),
-                "enemyBullet",
+                "bossBullet",
             ])
 
         }
 
         await wait(2)
-        enemy.enterState("move")
+        boss.enterState("move")
 
     })
 
-    enemy.onStateEnter("move", async () => {
+    boss.onStateEnter("move", async () => {
         await wait(2)
-        enemy.enterState("idle")
+        boss.enterState("idle")
     })
 
 
-    enemy.onStateUpdate("move", () => {
+    boss.onStateUpdate("move", () => {
         if (!player.exists()) return
-        const dir = player.pos.sub(enemy.pos).unit()
-        enemy.move(dir.scale(ENEMY_SPEED))
+        const dir = player.pos.sub(boss.pos).unit()
+        boss.move(dir.scale(ENEMY_SPEED))
     })
-
-
 
     //#############################################################
 
-
-
-
-
-
-    // ################# Bullet ######################
-
-    // function spawnBullet(p) {
-    // 	if (gunDestroyed) {
-    // 		add([
-    // 			rect(12, 12),
-    // 			pos(p),
-    // 			anchor('center'),
-    // 			area(),
-    // 			color(300, 0, 0),
-    // 			move(0, 400),
-    // 			offscreen({ destroy: true }),
-    // 			'playerBullet',
-    // 		])
-    // 	}
-    // }
-
-    // onKeyPress('up', () => {
-    // 	spawnBullet(player.pos.add(20, 20));
-    // })
-
     // ---------------- COLLIDE -----------------
 
-    player.onCollide("enemyBullet", (bullet) => {
-        destroy(bullet)
-        player.hurt(20)
-        healthBar.value -= 20
-        healthBar.text = healthBar.value + "pv"
-        console.log(healthBar.value)
-        if (healthBar.value <= 0)
-        {
-            go('lose')
-            wait(2,()=>{
-                go('scene')
-            })
-        }
+
+    onCollide("player", "battery", (p, battery) => {
+        destroy(battery)
+        score.value += 10
+        score.text = "score: " + score.value
     })
 
-    enemy.onCollide("playerBullet", (bullet) => {
-        destroy(enemy)
-        console.log("touch enemy")
-        shake(200)
-    })
-
-    // player.onCollide('gun', (m) => {
-    // 	destroy(m)
-    // 	gunDestroyed = true
-    // })
-
-    player.onCollide("dangerous", () => {
-        player.hurt(20)
-        healthBar.value -= 20
-        healthBar.text = healthBar.value + "pv"
-        console.log(healthBar.value)
-        if (healthBar.value <= 0)
-        {
-            go('lose')
-            wait(2,()=>{
-                go('scene')
-            })
-        }
-    })
 
     onCollide("playerBullet", "dangerous", (p, d) => {
         destroy(d)
-        shake(10)
+        score.value += 20
+        score.text = "score: " + score.value;
     })
+
+    onCollide("playerBullet","block",(pb,b)=>{
+        destroy(pb)
+    })
+
+
 
     // ########################### SCORE #############################
 
     const score = add([
+        fixed(),
         text("score: 0"),
         pos(width()-200,20),
         {
@@ -3171,30 +2256,58 @@ scene('level3',()=> {
 
     // ############################# TIMER ###############################
 
-    // const timer = add([
-    // 	text("0"),
-    // 	pos(width()-200,60),
-    // 	{
-    // 		value:0,
-    // 	},
-    // ])
-    //
-    // loop(1,()=>{
-    // 	timer.value ++
-    // 	timer.text = timer.value
-    // })
+    const timer = add([
+        fixed(),
+        text("0"),
+        pos(width()-400,20),
+        {
+            value:0,
+        },
+    ])
+
+    loop(1,()=>{
+        timer.value ++
+        timer.text = timer.value
+    })
 
     // ###############################################################
 
     // ########################## Health ############################
 
     const healthBar = add([
-        text( "100 pv"),
-        pos(width()/2,20),
+
+        fixed(),
+        text("❤️❤️❤️❤️❤️"),
+        pos(width() / 15, 20),
         {
-            value:100,
+            value: 100,
         }
     ])
+
+    player.onCollide("dangerous", () => {
+        player.hurt(20);
+        healthBar.value -= 20;
+        updateHealthBar();
+        if (healthBar.value <= 0) {
+            go('lose');
+            wait(2, () => {
+                go('scene');
+            });
+        }
+    });
+
+    function updateHealthBar() {
+        let remainingStars = Math.ceil(healthBar.value / 20);
+        healthBar.text = "❤️".repeat(remainingStars);
+        console.log(healthBar.value);
+    }
+
+
+    onCollide("playerBullet", "dangerous", (p, d) => {
+        destroy(d)
+        score.value += 20
+        score.text = "score: " + score.value;
+    })
 
     //################################################################
 
@@ -3204,77 +2317,100 @@ scene('level3',()=> {
 // ############################ SCENE LOSE ################################"
 scene('lose',()=>{
 
+    function addButton(txt, p, f) {
+
+
+        const btn = add([
+            rect(240, 80, { radius: 8 }),
+            pos(p),
+            area(),
+            scale(1),
+            anchor("center"),
+            outline(4),
+        ])
+
+
+        btn.add([
+            text(txt),
+            anchor("center"),
+            color(0, 0, 0),
+        ])
+
+        btn.onHoverUpdate(() => {
+            const t = time() * 10
+            btn.color = hsl2rgb((t / 10) % 1, 0.6, 0.7)
+            btn.scale = vec2(1.2)
+            setCursor("pointer")
+        })
+
+        btn.onHoverEnd(() => {
+            btn.scale = vec2(1)
+            btn.color = rgb()
+        })
+
+        btn.onClick(f)
+
+        return btn
+
+    }
+
+    addButton("Chose Level",vec2(300,400),()=> go("chooseLevel"))
+    addButton("Menu",vec2(600,400),()=> go("menu"))
+
+    add([
+        sprite("bg-death"),
+        scale(1)
+    ])
+
+    function addButton(txt, p, f) {
+
+
+        const btn = add([
+            rect(240, 80, { radius: 8 }),
+            pos(p),
+            area(),
+            scale(1),
+            anchor("center"),
+            outline(4),
+        ])
+
+
+        btn.add([
+            text(txt),
+            anchor("center"),
+            color(0, 0, 0),
+        ])
+
+        btn.onHoverUpdate(() => {
+            const t = time() * 10
+            btn.color = hsl2rgb((t / 10) % 1, 0.6, 0.7)
+            btn.scale = vec2(1.2)
+            setCursor("pointer")
+        })
+
+        btn.onHoverEnd(() => {
+            btn.scale = vec2(1)
+            btn.color = rgb()
+        })
+
+        btn.onClick(f)
+
+        return btn
+
+    }
+
+    addButton("Chose Level",vec2(center().x-150,400),()=> go("chooseLevel"))
+    addButton("Menu",vec2(center().x+150,400),()=> go("menu"))
+
     add([
         text('you lose'),
         anchor('center'),
-        scale(5),
+        scale(3),
         pos(width()/2, height()/2)
     ])
 })
 
-// #################### SCENE MENU ###############################
+// #################### START ###############################
 
-let isGamepadConnected = false
-scene("menu",()=>{
-    add([
-        sprite("bg-beginning"),
-        scale(0.500)
-    ]),
-
-        add([
-            sprite("logo"),
-            area(),
-            anchor("center"),
-            pos(center().x, center().y),
-            scale(1),
-        ]),
-
-        add([
-            text('upheavtt'),
-            area(),
-            anchor("center"),
-            pos(center().x, 370),
-            outline(4),
-            text("Taper sur [ ENTRER ] pour commencer à jouer", {
-                size: 30,
-                opacity: 0.3
-            }),
-        ]);
-
-    onKeyRelease("enter", () => {
-        go("chooseLevel");
-    })
-
-    onGamepadDisconnect(()=>{
-        add([
-            text("Gamepad not found", {
-                width: width() - 30,
-                align: "center",
-                size: 25,
-            }),
-            pos(center().x,450),
-            anchor("center"),
-        ])
-    })
-
-
-    if(isGamepadConnected == true) {
-        destroy(onGamepadDisconnect)
-    }
-
-    onGamepadConnect(()=>{
-        add([
-            text("Gamepad Connected", {
-                width: width() - 180,
-                align: "center",
-                color: GREEN,
-            }),
-            pos(center().x,450),
-            anchor("center"),
-        ])
-        isGamepadConnected = true
-    })
-
-})
 
 go("menu")
